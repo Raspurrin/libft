@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:07 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/18 01:17:43 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/18 10:22:21 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ char	*ft_strtrim(char const *str1, char const *set)
 		i++;
 	start = start + i;
 	i = 0;
-	while (end[i] == set[j])
-	{
-		i--;
-		j++;
-	}
+	while (end[i] == set[i])
+		i++;
 	end[i] = '\0';
 	j = ft_strlen(start);
 	out = malloc(j + 1 * sizeof(char));
@@ -40,7 +37,7 @@ char	*ft_strtrim(char const *str1, char const *set)
 	ft_strlcpy(out, start, j);
 	return (out);
 }
-
+ 
 	// while (i < j)
 	// {
 	// 	out[i] = start[i];

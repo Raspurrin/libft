@@ -1,17 +1,11 @@
 #include "../libft.h"
 
-char	*ft_toupper2(t_uint32 i, char c)
+char	ft_toupper2(t_uint32 i, char c)
 {
-	char	*str[1];
 	i++;
 	if ((c >= 'a' && c <= 'z'))
-	{
-		c = c - ('a' - 'A');
-		str[1] = c;
-         return (str[1]);
-	}
-		
-	return (NULL);
+         return (c - ('a' - 'A'));
+	return (0);
 }
 
 int	main(void)

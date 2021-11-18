@@ -1,6 +1,7 @@
 CFLAGS := -Wall -Wextra -Werror
 CC := gcc
 SRCS := $(shell find . -iname "ft_*.c")
+TESTS := $(shell find . -iname "test_*.c")
 OBJS := $(SRCS:.c=.o) 
 #TMPVAR := $(OBJS)
 #OBJS := $(filter-out test_%.o ($TMPVAR))
@@ -14,8 +15,16 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar r $(NAME) $(OBJS)
 
-#ft_%:
-#	$(CC) $(CFLAGS) sources/$@.c tests/test_$@.c -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a -o $@.o && ./$@.o
+ft_%:
+	$(CC) $(CFLAGS) sources/$@.c tests/test_$@.c -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a -o $@.o && ./$@.o
+
+#test_all:
+#	$(CC) $(CFLAGS) $(TESTS) $(SRCS) -o $@.o && ./$@.o
+
+test_all:
+	for $(TESTS)$(SRCS)
+	$(CC) $(CFLAGS) $(SRCS) $(TESTS) -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a && ./a.out
+
 
 clean: 
 	@rm -f $(OBJS)
