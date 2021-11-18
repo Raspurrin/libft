@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:17:25 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:17:26 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:28:21 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void		ft_putstr_fd(char *str, t_int32 fd)
+void	ft_putstr_fd(char *str, t_int32 fd)
 {
 	write(fd, str, ft_strlen(str));
 }

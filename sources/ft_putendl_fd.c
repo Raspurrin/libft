@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:41 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:14:42 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:28:01 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void		ft_putendl_fd(char *str, t_int32 fd)
+void	ft_putendl_fd(char *str, t_int32 fd)
 {
 	ft_putstr_fd(str, fd);
 	write(1, "\n", 1);

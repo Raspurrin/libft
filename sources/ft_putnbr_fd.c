@@ -6,20 +6,19 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:47 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:14:49 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:28:11 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void		ft_putnbr_fd(t_int32 nbr, t_int32 fd)
+void	ft_putnbr_fd(t_int32 nbr, t_int32 fd)
 {
 	char	c;
 
 	if (nbr == -2147483648)
 	{
 		write(fd, "-2147483648", 12);
-		return (0);
 	}
 	else if (nbr < 0)
 	{
@@ -31,7 +30,7 @@ void		ft_putnbr_fd(t_int32 nbr, t_int32 fd)
 		ft_putnbr_fd(nbr / 10, fd);
 		ft_putnbr_fd(nbr % 10, fd);
 	}
-	else if (nbr < 10)
+	else if (nbr < 10 && nbr != -2147483648)
 	{
 		c = nbr + '0';
 		write(fd, &c, 1);

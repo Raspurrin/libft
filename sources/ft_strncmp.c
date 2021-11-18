@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:46 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:19:47 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:38:44 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_int32		ft_strncmp(const char *str1, const char *str2, t_size n)
+t_int32	ft_strncmp(const char *str1, const char *str2, t_size n)
 {
-	t_size i;
+	t_size	i;
 
 	i = 0;
 	if (n == 0)

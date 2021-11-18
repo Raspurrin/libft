@@ -8,7 +8,7 @@ NAME := libft.a
 
 all: $(NAME)
 
-%.o: %.c 
+%.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $< -I .
 
 $(NAME): $(OBJS)

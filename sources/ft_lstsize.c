@@ -6,16 +6,16 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:13:43 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:13:44 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:30:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	t_list *counter;
-	t_size i;
+	t_list	*counter;
+	t_size	i;
 
 	counter = lst;
 	i = 0;

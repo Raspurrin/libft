@@ -6,24 +6,24 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:13:51 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:21:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 20:00:51 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void		*ft_memchr(const void *ptr, t_int32 c, t_size n)
+void	*ft_memchr(const void *ptr, t_int32 c, t_size n)
 {
-	t_size i;
-	t_size len;
-	char *ptr2;
+	t_size	i;
+	t_size	len;
+	char	*ptr2;
 
 	i = 0;
 	ptr2 = (char *)ptr;
 	len = ft_strlen(ptr2);
 	while (i < n && i < len)
 	{
-		if (*ptr2 == c) //if (ptr[i] == c) yields the wrong results. Why?
+		if (*ptr2 == c)
 			return ((void *)ptr2);
 		i++;
 		ptr2++;
@@ -31,6 +31,7 @@ void		*ft_memchr(const void *ptr, t_int32 c, t_size n)
 	return (0);
 }
 
+//if (ptr[i] == c) yields the wrong results. Why?
 // void		*ft_memchr(const void *ptr, int32_t c, t_size n)
 // {
 // 	t_size i;

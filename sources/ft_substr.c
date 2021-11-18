@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:13 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:20:14 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 19:23:57 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char		*ft_substr(char const *str, t_uint32 start, t_size len)
+char	*ft_substr(char const *str, t_uint32 start, t_size len)
 {
-	t_size i;
+	t_size	i;
 	char	*out;
 
 	i = 0;

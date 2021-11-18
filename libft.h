@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
+/*   Updated: 2021/11/17 20:33:17 by mialbert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 //# include <stdint.h>
-// #include <unistd.h>
-//# include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 //# include <stdbool.h>
 
-# define NULL '\0';
 # define false 0
-# define true 1;
+# define true 1
 typedef	int bool;
 typedef unsigned int t_uint32;
 typedef signed int t_int32;

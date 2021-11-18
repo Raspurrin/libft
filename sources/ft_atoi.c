@@ -6,17 +6,17 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:09:36 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 21:20:58 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 14:50:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_int32		ft_atoi(char *str)
+t_int32	ft_atoi(char *str)
 {
-	t_size i;
-	t_size minus;
-	t_int32 out;
+	t_size	i;
+	t_size	minus;
+	t_int32	out;
 
 	i = 0;
 	minus = 0;

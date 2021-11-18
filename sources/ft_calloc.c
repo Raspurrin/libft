@@ -6,20 +6,22 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:11:33 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/15 20:11:35 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/17 16:00:26 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
 
-void		*ft_calloc(size_t num, size_t size)
+void	*ft_calloc(t_size num, t_size size)
 {
-	t_size i;
-	char *out;
+	t_size	i;
+	char	*out;
 
 	i = 0;
 	out = malloc(num * size);
+	if (!(out))
+		return (NULL);
 	while (i < num)
 	{
 		out = '\0';
