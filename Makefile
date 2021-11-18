@@ -16,15 +16,17 @@ $(NAME): $(OBJS)
 	ar r $(NAME) $(OBJS)
 
 ft_%:
-	$(CC) $(CFLAGS) sources/$@.c tests/test_$@.c -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a -o $@.o && ./$@.o
+	$(CC) $(CFLAGS) $(SRCS)  tests/test_$@.c -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a && ./a.out
+
+#sources/$@.c this instead of $(SRCS) above actually
+
+
+tests_all:
+	$(CC) $(CFLAGS) $(SRCS) tests/$@.c -lbsd -o $@.o && ./$@.o
 
 #test_all:
-#	$(CC) $(CFLAGS) $(TESTS) $(SRCS) -o $@.o && ./$@.o
-
-test_all:
-	for $(TESTS)$(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) $(TESTS) -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a && ./a.out
-
+#for $(TESTS)
+#$(CC) $(CFLAGS) $(SRCS) $(TESTS) -lbsd -L/mnt/c/Users/Michelle/Documents/Coding_projects/libft/libft.a && ./a.out
 
 clean: 
 	@rm -f $(OBJS)
