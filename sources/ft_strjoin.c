@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:11 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/17 19:41:34 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/19 22:04:08 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ char	*ft_strjoin(char const *str1, char const *str2)
 		return (0);
 	str1len = ft_strlen((char *)str1);
 	str2len = ft_strlen((char *)str2);
-	out = malloc((str1len * sizeof(char)) + (str2len * sizeof(char)));
-	ft_memcpy(out, str1, str1len);
-	ft_memcpy(out, str2, str2len);
+	out = ft_calloc((str1len + str2len + 1), sizeof(char));
+	if (!out)
+		return (0);
+	ft_strlcpy(out, str1, str1len);
+	ft_strlcpy(out + str1len, str2, str2len);
 	return (out);
 }
 	// while (i < str1len)

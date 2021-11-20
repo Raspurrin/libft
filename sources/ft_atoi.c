@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:09:36 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/17 14:50:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/19 01:45:58 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_int32	ft_atoi(char *str)
 		i++;
 	}
 	while (str[i] && ft_isdigit(str[i]))
-		out = (out * 10) + (str[i] - '0');
+		out = (out * 10) + (str[i++] - '0');
 	if (minus % 2 == 1)
 		out *= -1;
 	return (out);

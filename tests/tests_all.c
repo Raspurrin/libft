@@ -13,14 +13,14 @@ char	ft_toupper2(t_uint32 i, char c)
 	return (0);
 }
 
-// void	test_ft_atoi()
-// {	
-// 	printf("Testing: 2147483647\tOriginal: %d\t Your function: %d\n", atoi("2147483647"), ft_atoi("2147483647"));
-// 	printf("Testing: -2147483648\tOriginal: %d\t Your function: %d\n", atoi("-2147483648"), ft_atoi("-2147483648"));
-// 	printf("Testing: 10\tOriginal: %d\t Your function: %d\n", atoi("10"), ft_atoi("10"));
-// 	printf("Testing: 0\tOriginal: %d\t Your function: %d\n", atoi("0"), ft_atoi("0"));
-// 	printf("Testing: 	-+--300\tOriginal: %d\t Your function: %d\n", atoi(" 	-+--300"), ft_atoi(" 	-+--300"));
-// }
+void	test_ft_atoi()
+{	
+	printf("Testing: 2147483647\tOriginal: %d\t Your function: %d\n", atoi("2147483647"), ft_atoi("2147483647"));
+	printf("Testing: -2147483648\tOriginal: %d\t Your function: %d\n", atoi("-2147483648"), ft_atoi("-2147483648"));
+	printf("Testing: 10\tOriginal: %d\t Your function: %d\n", atoi("10"), ft_atoi("10"));
+	printf("Testing: 0\tOriginal: %d\t Your function: %d\n", atoi("0"), ft_atoi("0"));
+	printf("Testing: 	-+--300\tOriginal: %d\t Your function: %d\n", atoi(" 	-+--300"), ft_atoi(" 	-+--300"));
+}
 
 void	test_ft_bzero()
 {
@@ -35,12 +35,14 @@ void	test_ft_bzero()
 
 void	test_ft_calloc()
 {
+	printf("\ntest_ft_calloc:\n");
 	printf("original: %s\t Your function: %s\n", (char *)calloc(3, sizeof(int)), (char *)ft_calloc(3, sizeof(int)));
 	printf("original: %s\t Your function: %s\n", (char *)calloc(10, sizeof(char)), (char *)ft_calloc(10, sizeof(char)));
 }
 
 void	test_ft_intlen()
 {
+	printf("\ntest_ft_intlen:\n");
 	printf("Your function: %ld\n", ft_intlen(35334));
 	printf("Your function: %ld\n", ft_intlen(0));
 	printf("Your function: %ld\n", ft_intlen(-349));
@@ -52,7 +54,7 @@ void	test_ft_intlen()
 
 void	test_ft_isalnum()
 {
-	printf("test_ft_isalnum:\n");
+	printf("\ntest_ft_isalnum:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isalnum('a'), ft_isalnum('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isalnum('z'), ft_isalnum('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", isalnum('A'), ft_isalnum('A'));
@@ -81,7 +83,7 @@ void	test_ft_isalnum()
 
 void	test_ft_isalpha()
 {
-	printf("test_ft_isalpha:\n");
+	printf("\ntest_ft_isalpha:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isalpha('a'), ft_isalpha('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isalpha('z'), ft_isalpha('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", isalpha('A'), ft_isalpha('A'));
@@ -110,7 +112,7 @@ void	test_ft_isalpha()
 
 void	test_ft_isascii()
 {
-	printf("test_ft_isascii:\n");
+	printf("\ntest_ft_isascii:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isascii('a'), ft_isascii('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isascii('z'), ft_isascii('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", isascii('A'), ft_isascii('A'));
@@ -139,7 +141,7 @@ void	test_ft_isascii()
 
 void	test_ft_isdigit()
 {
-	printf("test_ft_isdigit:\n");
+	printf("\ntest_ft_isdigit:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isdigit('a'), ft_isdigit('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isdigit('z'), ft_isdigit('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", isdigit('A'), ft_isdigit('A'));
@@ -168,7 +170,7 @@ void	test_ft_isdigit()
 
 void	test_ft_isprint()
 {
-	printf("test_ft_isprint:\n");
+	printf("\ntest_ft_isprint:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isprint('a'), ft_isprint('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isprint('z'), ft_isprint('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", isprint('A'), ft_isprint('A'));
@@ -197,6 +199,7 @@ void	test_ft_isprint()
 
 void	test_ft_itoa()
 {
+	printf("\ntest_ft_itoa:\n");
 	printf("Right answer: 35334\t\t Your function: %s\n", ft_itoa(35334));
 	printf("Right answer: 0\t\t\t Your function: %s\n", ft_itoa(0));
 	printf("Right answer: -349\t\t Your function: %s\n", ft_itoa(-349));
@@ -208,7 +211,7 @@ void	test_ft_itoa()
 
 void	test_ft_memchr()
 {
-	printf("test_ft_memchr:\n");
+	printf("\ntest_ft_memchr:\n");
 	char	str[] = "Suffer and have fun!";
 	printf("Original: %p\t Your function: %p\n", memchr(str, 'a', 21), ft_memchr(str, 'a', 21));
 	printf("Original: %p\t\t\t Your function: %p\n", memchr(str, 'a', 5), ft_memchr(str, 'a', 5));
@@ -227,7 +230,7 @@ void	test_ft_memcmp()
 	char	str5[] = "s\0metimes";
 	int ints1[] = {1, 2, 600, 345, -1};
 	int ints2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	printf("test_ft_memcmp:\n");
+	printf("\ntest_ft_memcmp:\n");
 	printf("Original: %d\t\t Your function: %d\n", memcmp(str1, str2, 5), ft_memcmp(str1, str2, 5));
 	printf("Original: %d\t\t Your function: %d\n", memcmp(str1, str2, 3), ft_memcmp(str1, str2, 3));
 	printf("Original: %d\t\t Your function: %d\n\n", memcmp(str1, str2, 0), ft_memcmp(str1, str2, 0));
@@ -254,7 +257,7 @@ void	test_ft_memcpy()
 	char	str5[] = "s\0metimes";
 	int ints1[] = {1, 2, 600, 345, -1};
 	int ints2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	printf("test_ft_memcpy:\n");
+	printf("\ntest_ft_memcpy:\n");
 	printf("Original: %p\t Your function: %p\n", memcpy(str1, str2, 5), ft_memcpy(str1, str2, 5));
 	printf("Original: %p\t Your function: %p\n", memcpy(str1, str2, 3), ft_memcpy(str1, str2, 3));
 	printf("Original: %p\t Your function: %p\n\n", memcpy(str1, str2, 0), ft_memcpy(str1, str2, 0));
@@ -278,7 +281,7 @@ void	test_ft_memmove()
 	char	str5[] = "s\0metimes";
 	int ints1[] = {1, 2, 600, 345, -1};
 	int ints2[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	printf("test_ft_memmove:\n");
+	printf("\ntest_ft_memmove:\n");
 	printf("Original: %p\t Your function: %p\n", memmove(str1, str2, 5), ft_memmove(str1, str2, 5));
 	printf("Original: %p\t Your function: %p\n", memmove(str1, str2, 3), ft_memmove(str1, str2, 3));
 	printf("Original: %p\t Your function: %p\n", memmove(str1, str2, 0), ft_memmove(str1, str2, 0));
@@ -296,7 +299,7 @@ void	test_ft_memset()
 	int 	ints[] = {1, 2, 600, 345, -1};
 	char	str[] = "s\0mething";
 
-	printf("test_ft_isalnum:\n");
+	printf("\ntest_ft_memset:\n");
 	printf("original: %s\t Your function: %s\n", (char *)memset(ints, 'c', sizeof(ints)), (char *)ft_memset(ints, 'c', sizeof(ints)));
 	printf("original: %s\t Your function: %s\n", (char *)memset(ints, 43, sizeof(ints)), (char *)ft_memset(ints, 43, sizeof(ints)));
 	printf("original: %s\t\t Your function: %s\n", (char *)memset(str, 'a', 10), (char *)ft_memset(str, 'a', 10));
@@ -342,40 +345,47 @@ void	test_ft_strdup()
 	char	str1[] = "cookie";
 	char	str2[] = "something";
 
+	printf("\ntest_ft_strdup:\n");
 	printf("original: %s\t Your function: %s\n", strdup(str1), ft_strdup(str1));
 	printf("original: %s\t Your function: %s\n", strdup(str2), ft_strdup(str2));
 }
 
 void	test_ft_strjoin()
 {
-	printf("test_ft_strjoin:\n");
+	printf("\ntest_ft_strjoin:\n");
 	char	str1[] = "I have ";
 	char	str2[] = "a cookie";
 	printf("Your function: %s\n", ft_strjoin(str1, str2));
 }
 
-// void	test_ft_strlcat()
-// {
-// 	char	str1[] = "I have   ";
-// 	char	str2[] = "I have   ";
-// 	char	str3[] = "a cookie";
-// 	// char	str4[] = "The world will be filled with nanobots";
-// 	// char	str5[] = "The world will be filled with nanobots";
-// 	printf("Original: %ld\t Your function: %lu\n", strlcat(str1, str3, 10), ft_strlcat(str2, str3, 10));
-// 	printf("Original str1 == %s\t Your str2 == %s\n", str1, str2);
-// 	// printf("Original: %lu\t Your function: %u\n", strlcat(str1, str2, 3), ft_strlcat(str1, str2, 3));
-// 	// printf("Original: %lu\t Your function: %u\n\n", strlcat(str1, str2, 0), ft_strlcat(str1, str2, 0));
-// 	// printf("Original: %lu\t Your function: %u\n", strlcat(str1, str3, 5), ft_strlcat(str1, str3, 5));
-// 	// printf("Original: %lu\t Your function: %u\n", strlcat(str1, str3, 3), ft_strlcat(str1, str3, 3));
-// 	// printf("Original: %lu\t Your function: %u\n", strlcat(str1, str3, 0), ft_strlcat(str1, str3, 0));
-// }
+void	test_ft_strlcat()
+{
+	char	str1[18] = "I have";
+	char	str2[18] = "I have"; // 6
+	char	str3[18] = "I have";
+	char	str4[18] = "I have";
+	char	str5[18] = "I have";
+	char	str6[18] = "I have";
+	char	str7[18] = "I have";
+	char	str8[18] = "I have";
+	char	str9[18] = "I have";
+	char	str10[18] = "I have";
+	char	str11[] = " a cookie"; // 8
+	// char	str4[] = "The world will be filled with nanobots";
+	// char	str5[] = "The world will be filled with nanobots";
+	printf("Original: %ld \t%s\t Your function: %lu\t %s\n", strlcat(str1, str11, 9), str1, ft_strlcat(str2, str11, 9), str2);
+	printf("Original: %ld \t%s\t\t Your function: %lu\t %s\n", strlcat(str3, str11, 0), str3, ft_strlcat(str4, str11, 0), str4);
+	printf("Original: %ld \t%s\t Your function: %lu\t %s\n", strlcat(str5, str11, 17), str5, ft_strlcat(str6, str11, 17), str6);
+	printf("Original: %ld \t%s\t\t Your function: %lu\t %s\n", strlcat(str7, str11, 5), str7, ft_strlcat(str8, str11, 5), str8);
+	printf("Original: %ld \t%s\t\t Your function: %lu\t %s\n", strlcat(str9, str11, 6), str9, ft_strlcat(str10, str11, 6), str10);
+}
 
 void	test_ft_strlcpy()
 {
 	char	str1[] = "hello";
 	char	str2[] = "help";
 	char	str3[] = "";
-	printf("test_ft_strlcpy:\n");
+	printf("\ntest_ft_strlcpy:\n");
 	printf("Original: %lu\t Your function: %u\n", strlcpy(str1, str2, 5), ft_strlcpy(str1, str2, 5));
 	printf("Original: %lu\t Your function: %u\n", strlcpy(str1, str2, 3), ft_strlcpy(str1, str2, 3));
 	printf("Original: %lu\t Your function: %u\n\n", strlcpy(str1, str2, 0), ft_strlcpy(str1, str2, 0));
@@ -389,7 +399,7 @@ void	test_ft_strlen()
 	char	str1[] = "cookie";
 	char	str2[] = "something";
 
-	printf("test_ft_strlen:\n");
+	printf("\ntest_ft_strlen:\n");
 	printf("original: %ld\t Your function: %ld\n", strlen(str1), ft_strlen(str1));
 	printf("original: %ld\t Your function: %ld\n", strlen(str2), ft_strlen(str2));
 }
@@ -405,7 +415,7 @@ void	test_ft_strncmp()
 	char	str1[] = "hello";
 	char	str2[] = "help";
 	char	str3[] = "";
-	printf("test_ft_strncmp:\n");
+	printf("\ntest_ft_strncmp:\n");
 	printf("Original: %d\t Your function: %d\n", strncmp(str1, str2, 5), ft_strncmp(str1, str2, 5));
 	printf("Original: %d\t Your function: %d\n", strncmp(str1, str2, 3), ft_strncmp(str1, str2, 3));
 	printf("Original: %d\t Your function: %d\n\n", strncmp(str1, str2, 0), ft_strncmp(str1, str2, 0));
@@ -424,14 +434,14 @@ void	test_ft_strnstr()
 	char str5[] = "have";
 	// char str6[] = "a";
 	// char str7[] = "";
-	printf("test_ft_strnstr:\n");
+	printf("\ntest_ft_strnstr:\n");
 	printf("Original: %s\t Your function: %s\n", strnstr(str1, str5, 21), ft_strnstr(str2, str5, 21));
 }
 
 void	test_ft_strrchr()
 {
 	char	str[] = "Suffer and have fun!";
-	printf("test_ft_strrchr:\n");
+	printf("\ntest_ft_strrchr:\n");
 	printf("Original: %p\t Your function: %p\n", strrchr(str, 'a'), ft_strrchr(str, 'a'));
 	printf("Original: %p\t Your function: %p\n", strrchr(str, '!'), ft_strrchr(str, '!'));
 	printf("Original: %p\t Your function: %p\n", strrchr(str, 'f'), ft_strrchr(str, 'f'));
@@ -442,16 +452,16 @@ void	test_ft_strrchr()
 
 void	test_ft_strtrim()
 {
-	char	str1[] = "Something has to be trimmed from moS";
+	char	str1[] = "Something has to be trimmed from Som";
 	char	str2[] = "Som";
-	printf("test_ft_strtrim:\n");
+	printf("\ntest_ft_strtrim:\n");
 	printf("Your function: %s\n", ft_strtrim(str1, str2));
 }
 
 void	test_ft_substr()
 {
 	char	str[] = "Suffer and have fun!";
-	printf("test_ft_substr:\n");
+	printf("\ntest_ft_substr:\n");
 	printf("Your function: %s\n", ft_substr(str, 0, 21));
 	printf("Your function: %s\n", ft_substr(str, 7, 21));
 	printf("Your function: %s\n", ft_substr(str, 11, 21));
@@ -460,7 +470,7 @@ void	test_ft_substr()
 
 void	test_ft_tolower()
 {
-	printf("test_ft_tolower:\n");
+	printf("\ntest_ft_tolower:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", tolower('a'), ft_tolower('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", tolower('z'), ft_tolower('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", tolower('A'), ft_tolower('A'));
@@ -469,7 +479,7 @@ void	test_ft_tolower()
 
 void	test_ft_toupper()
 {
-	printf("test_ft_toupper:\n");
+	printf("\ntest_ft_toupper:\n");
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", toupper('a'), ft_toupper('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", toupper('z'), ft_toupper('z'));
 	printf("Testing: 'A'\tOriginal: %d\t Your function: %d\n", toupper('A'), ft_toupper('A'));
@@ -480,7 +490,7 @@ void	test_ft_wcount()
 {
 	char	str[] = "Suffer and have fun!";
 	char	str2[] = "Suffer    and	 have fun!";
-	printf("test_ft_wcount:\n");
+	printf("\ntest_ft_wcount:\n");
 	printf("Your function: %ld\n", ft_wcount(str, ' '));
 	printf("Your function: %ld\n", ft_wcount(str, 'a'));
 	printf("Your function: %ld\n", ft_wcount(str2, ' '));
@@ -489,7 +499,7 @@ void	test_ft_wcount()
 
 int	main(void)
 {
-	// test_ft_atoi(); doesn't work
+	test_ft_atoi();
 	test_ft_bzero();
 	test_ft_calloc();
 	test_ft_intlen();
@@ -509,7 +519,7 @@ int	main(void)
 	test_ft_strchr();
 	test_ft_strdup();
 	test_ft_strjoin();
-	// test_ft_strlcat(); doesn't work!
+	test_ft_strlcat();
 	test_ft_strlcpy();
 	test_ft_strlen();
 	test_ft_strmapi();

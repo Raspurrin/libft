@@ -20,7 +20,6 @@ ft_%:
 
 #sources/$@.c this instead of $(SRCS) above actually
 
-
 tests_all:
 	$(CC) $(CFLAGS) $(SRCS) tests/$@.c -lbsd -o $@.o && ./$@.o
 
