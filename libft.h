@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/17 20:33:17 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/20 11:14:18 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 //# include <stdbool.h>
+#include <stdint.h>
 
 # define false 0
 # define true 1
@@ -26,6 +27,12 @@ typedef signed int t_int32;
 typedef unsigned long int t_size;
 typedef long long unsigned int t_uint64;
 typedef long long signed int t_int64;
+
+/**
+* @param c This is the char in the function
+* @return It returns something
+*/
+void	*something(int x);
 
 /**
  * @param content : The data contained in the element. The void * allows to store any kind of data.
@@ -123,7 +130,7 @@ void		*ft_memmove(void *dst, const void *src, t_size n);
  * @param size How many characters are to be copied.
  * @return The total length of the string it tried to create: the initial length of dst plus the length of src.
  */
-t_uint32	ft_strlcpy(char *dst, const char *src, t_size size);
+t_size	ft_strlcpy(char *dst, const char *src, t_size size);
 /**
  * Appends the NUL-terminated string src to the end of dst. It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
  * @param dest The string that is to be appended upon. 
