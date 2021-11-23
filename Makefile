@@ -13,9 +13,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar r $(NAME) $(OBJS)
 
-tests_all:
-
-	$(CC) $(CFLAGS) $(TESTS) $(NAME) -lbsd && ./a.out
+#tests_all:
+#	$(CC) $(CFLAGS) $(TESTS) $(NAME) -lbsd && ./a.out
 
 clean: 
 	@rm -f $(OBJS)
