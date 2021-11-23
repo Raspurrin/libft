@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <ctype.h>
 
-int	main(void)
+int	test_ft_isprint(void)
 {
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isprint('a'), ft_isprint('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isprint('z'), ft_isprint('z'));

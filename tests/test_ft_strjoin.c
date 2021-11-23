@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-int	main(void)
+int	test_ft_strjoin(void)
 {
 	char	str1[] = "I have ";
 	char	str2[] = "a cookie";

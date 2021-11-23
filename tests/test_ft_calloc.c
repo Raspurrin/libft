@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_calloc(void)
 {
 	printf("original: %s\t Your function: %s\n", (char *)calloc(3, sizeof(int)), (char *)ft_calloc(3, sizeof(int)));
 	printf("original: %s\t Your function: %s\n", (char *)calloc(10, sizeof(char)), (char *)ft_calloc(10, sizeof(char)));

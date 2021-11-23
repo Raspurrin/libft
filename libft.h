@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/20 11:14:18 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/22 23:59:26 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 //# include <stdbool.h>
-#include <stdint.h>
+# include <stdint.h>
+# include <string.h>
 
 # define false 0
 # define true 1
@@ -27,12 +28,6 @@ typedef signed int t_int32;
 typedef unsigned long int t_size;
 typedef long long unsigned int t_uint64;
 typedef long long signed int t_int64;
-
-/**
-* @param c This is the char in the function
-* @return It returns something
-*/
-void	*something(int x);
 
 /**
  * @param content : The data contained in the element. The void * allows to store any kind of data.

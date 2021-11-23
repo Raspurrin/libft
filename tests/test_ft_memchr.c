@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_memchr(void)
 {
 	char	str[] = "Suffer and have fun!";
 	printf("Original: %p\t Your function: %p\n", memchr(str, 'a', 21), ft_memchr(str, 'a', 21));

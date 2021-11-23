@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_strlen(void)
 {
 	char	str1[] = "cookie";
 	char	str2[] = "something";

@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_substr(void)
 {
 	char	str[] = "Suffer and have fun!";
 	printf("Your function: %s\n", ft_substr(str, 0, 21));

@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_strrchr(void)
 {
 	char	str[] = "Suffer and have fun!";
 	printf("Original: %p\t Your function: %p\n", strrchr(str, 'a'), ft_strrchr(str, 'a'));

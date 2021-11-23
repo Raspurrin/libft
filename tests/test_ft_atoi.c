@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int	main(void)
+int	test_ft_atoi(void)
 {
 	printf("Testing: 2147483647\tOriginal: %d\t Your function: %d\n", atoi("2147483647"), ft_atoi("2147483647"));
 	printf("Testing: -2147483648\tOriginal: %d\t Your function: %d\n", atoi("-2147483648"), ft_atoi("-2147483648"));

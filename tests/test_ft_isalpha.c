@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <ctype.h>
 
-int	main(void)
+int	test_ft_isalpha(void)
 {
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isalpha('a'), ft_isalpha('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isalpha('z'), ft_isalpha('z'));

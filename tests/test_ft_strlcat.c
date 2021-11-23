@@ -1,8 +1,7 @@
 #include "../libft.h"
 #include <bsd/string.h>
-// #include <string.h>
 
-int	main(void)
+int	test_ft_strlcat(void)
 {
 	char	str1[18] = "I have";
 	char	str2[18] = "I have"; // 6

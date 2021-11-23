@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_memset(void)
 {
  	int 	ints[] = {1, 2, 600, 345, -1};
 	char	str[] = "s\0mething";

@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <ctype.h>
 
-int	main(void)
+int	test_ft_isdigit(void)
 {
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isdigit('a'), ft_isdigit('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isdigit('z'), ft_isdigit('z'));

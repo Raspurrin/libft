@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_strtrim(void)
 {
 	char	str1[] = "Something has to be trimmed from fooSSmmmmSo";
 	char	str2[] = "Som";

@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <bsd/string.h>
 
-int	main(void)
+int	test_ft_strnstr(void)
 {
 	char str1[] = "Suffer and have fun!";
 	char str2[] = "Suffer and have fun!";

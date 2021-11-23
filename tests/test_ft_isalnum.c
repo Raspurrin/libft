@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <ctype.h>
 
-int	main(void)
+int	test_ft_isalnum(void)
 {
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", isalnum('a'), ft_isalnum('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", isalnum('z'), ft_isalnum('z'));

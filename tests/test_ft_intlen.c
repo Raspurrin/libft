@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_intlen(void)
 {
 	printf("Your function: %ld\n", ft_intlen(35334));
 	printf("Your function: %ld\n", ft_intlen(0));

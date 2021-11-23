@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <ctype.h>
 
-int	main(void)
+int	test_ft_toupper(void)
 {
 	printf("Testing: 'a'\tOriginal: %d\t Your function: %d\n", toupper('a'), ft_toupper('a'));
 	printf("Testing: 'z'\tOriginal: %d\t Your function: %d\n", toupper('z'), ft_toupper('z'));

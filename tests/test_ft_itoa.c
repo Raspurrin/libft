@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-int	main(void)
+int	test_ft_itoa(void)
 {
 	printf("Right answer: 35334\t\t Your function: %s\n", ft_itoa(35334));
 	printf("Right answer: 0\t\t\t Your function: %s\n", ft_itoa(0));

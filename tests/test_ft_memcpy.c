@@ -1,7 +1,7 @@
 #include "../libft.h"
 #include <string.h>
 
-int	main(void)
+int	test_ft_memcpy(void)
 {
 	char	str1[] = "hello";
 	char	str2[] = "help";
