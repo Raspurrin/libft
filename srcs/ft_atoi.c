@@ -6,32 +6,30 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:09:36 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/19 01:45:58 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_int32	ft_atoi(char *str)
+t_int32	ft_atoi(const char *str)
 {
 	t_size	i;
-	t_size	minus;
+	t_int32	sign;
 	t_int32	out;
 
 	i = 0;
-	minus = 0;
+	sign = 1;
 	out = 0;
-	while (str[i] && ft_isspace(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
-	while ((str[i] && str[i] == '+') || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			minus++;
+			sign = -1;
 		i++;
 	}
-	while (str[i] && ft_isdigit(str[i]))
+	while (ft_isdigit(str[i]))
 		out = (out * 10) + (str[i++] - '0');
-	if (minus % 2 == 1)
-		out *= -1;
-	return (out);
+	return (out * sign);
 }

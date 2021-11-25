@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:20 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/19 17:21:25 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_size	ft_strlcat(char *dst, const char *src, t_size size)
 	dstlen = i;
 	if (size == dstlen - 1)
 		return (dstlen - 1 + srclen);
-	while(src[j] && i < size - 1)
+	while (src[j] && i < size - 1)
 	{
 		dst[i] = src[j];
 		j++;
@@ -47,4 +47,5 @@ t_size	ft_strlcat(char *dst, const char *src, t_size size)
 // return the length of the source + dst until null terminator
 // I have = 6 | a cookie = 9. Together they are 15. Max return value
 // Lenght of source. 9 :) Minimum return value
-// size is up to how long the concatenated string will be from the first element of the new string
+// size is up to how long the concatenated string will 
+// be from the first element of the new string

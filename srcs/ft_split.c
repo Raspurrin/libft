@@ -6,13 +6,14 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:48 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/18 13:57:46 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "../libft.h"
 
-// static char **ft_alloc(char **out, const char *str, t_size wcount, t_size *start)
+// static char **ft_alloc(char **out, const char *str, 
+//						t_size wcount, t_size *start)
 // {
 // 	t_size i;
 
@@ -23,7 +24,8 @@
 // 	return (out);
 // }
 
-// static t_size **ft_wlen(const char *str, char c, t_size *wlen, t_size *start, t_size *i)
+// static t_size **ft_wlen(const char *str, char c, 
+//							t_size *wlen, t_size *start, t_size *i)
 // {
 // 	while (str[*i] && str[*i] == c)
 // 		*i++;

@@ -1,9 +1,27 @@
-CFLAGS := -Wall -Wextra -Werror
-CC := gcc
-SRCS := $(shell find . -iname "ft_*.c")
-TESTS := $(shell find . -iname "test_*.c")
-OBJS := $(SRCS:.c=.o)
-NAME := libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
+#    Updated: 2021/11/25 12:17:10 by mialbert         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CFLAGS = -Wall -Wextra -Werror
+CC = gcc
+#SRCS := $(shell find . -iname "ft_*.c")
+SRCS = ft_memmove.c ft_strjoin.c ft_isalnum.c ft_isdigit.c ft_substr.c ft_lstsize.c ft_memchr.c \
+ft_itoa.c ft_isspace.c ft_memcmp.c ft_strchr.c ft_strlcat.c ft_calloc.c ft_putstr_fd.c ft_intlen.c \
+ft_strtrim.c ft_tolower.c ft_memcpy.c ft_putendl_fd.c ft_strnstr.c ft_lstadd_front.c ft_putchar_fd.c \
+ft_toupper.c ft_memset.c ft_strncmp.c ft_lstiter.c ft_split2.c ft_realloc.c ft_isprint.c ft_isalpha.c \
+ft_lstadd_back.c ft_lstdelone.c ft_pow.c ft_strdup.c ft_putnbr_fd.c ft_bzero.c ft_lstclear.c ft_atoi.c \
+ft_lstnew.c ft_wcount.c ft_strrchr.c ft_strmapi.c ft_lstmap.c ft_isascii.c ft_strtrim2.c ft_strlcpy.c \
+ft_split.c ft_strlen.c
+OBJS = $(SRCS:.c=.o)
+NAME = libft.a
 
 all: $(NAME)
 
@@ -11,23 +29,26 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -o $@ -c $< -I .
 
 $(NAME): $(OBJS)
-	ar r $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-#tests_all:
-#	$(CC) $(CFLAGS) $(TESTS) $(NAME) -lbsd && ./a.out
-
-clean: 
+clean:
 	@rm -f $(OBJS)
-	@echo "$(OBJS) removed"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) removed"
 
 re: fclean all
 
 .PHONY: all clean fclean
 
+#	@echo "$(OBJS) removed"
+
+#	@echo "$(NAME) removed"
+
+#TESTS := $(shell find . -iname "test_*.c")
+
+#tests_all:
+#	$(CC) $(CFLAGS) $(TESTS) $(NAME) -lbsd && ./a.out
 
 #ft_%:
 #	$(CC) $(CFLAGS) sources/$@.c tests/test_$@.c libft.a -lbsd -o $@.o && ./$@.o
@@ -66,3 +87,5 @@ re: fclean all
 #	$(CC) $(CFLAGS) sources/ft_pustr_fd.c tests/test_ft_putstr_fd.c libft.a -lbsd && ./a.out
 #	$(CC) $(CFLAGS) sources/ft_realloc.c tests/test_ft_realloc.c libft.a -lbsd && ./a.out
 #	$(CC) $(CFLAGS) sources/ft_split.c tests/test_ft_split.c libft.a -lbsd && ./a.out
+
+# find . -type f -iname "ft_*.c" | cut -d "/" -f 3 | tr '\n' ' '

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:13 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/17 19:23:57 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,30 @@
 
 char	*ft_substr(char const *str, t_uint32 start, t_size len)
 {
-	t_size	i;
 	char	*out;
+	t_size	slen;
 
-	i = 0;
-	out = malloc(len - start * sizeof(char));
-	while (i < len)
-	{
-		out[i++] = ((char *)str)[start++];
-	}
-	((char *)out)[i] = '\0';
-	return ((char *)out);
+	slen = ft_strlen(str);
+	if (start > len)
+		return (ft_strdup(""));
+	if (len > slen - start)
+		return (ft_strdup(str + start));
+	out = malloc((len + 1) * sizeof(char));
+	if (!out)
+		return (NULL);
+	ft_memcpy(out, str + start, len);
+	out[len] = '\0';
+	return (out);
 }
+
+	// t_size	i;
+	// char	*out;
+
+	// i = 0;
+	// out = malloc(len - start * sizeof(char));
+	// while (i < len)
+	// {
+	// 	out[i++] = ((char *)str)[start++];
+	// }
+	// ((char *)out)[i] = '\0';
+	// return ((char *)out);

@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:14:22 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/17 16:02:14 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-bool	ft_isdigit(t_int32 c)
+t_bool	ft_isdigit(t_int32 c)
 {
 	if (c >= '0' && c <= '9')
-		return (true);
-	return (false);
+		return (TRUE);
+	return (FALSE);
 }

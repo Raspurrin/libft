@@ -42,34 +42,34 @@ from base64 import b85decode
 
 
 def determine_pip_install_arguments():
-    implicit_pip = True
-    implicit_setuptools = True
-    implicit_wheel = True
+    implicit_pip = TRUE
+    implicit_setuptools = TRUE
+    implicit_wheel = TRUE
 
     # Check if the user has requested us not to install setuptools
     if "--no-setuptools" in sys.argv or os.environ.get("PIP_NO_SETUPTOOLS"):
         args = [x for x in sys.argv[1:] if x != "--no-setuptools"]
-        implicit_setuptools = False
+        implicit_setuptools = FALSE
     else:
         args = sys.argv[1:]
 
     # Check if the user has requested us not to install wheel
     if "--no-wheel" in args or os.environ.get("PIP_NO_WHEEL"):
         args = [x for x in args if x != "--no-wheel"]
-        implicit_wheel = False
+        implicit_wheel = FALSE
 
     # We only want to implicitly install setuptools and wheel if they don't
     # already exist on the target platform.
     if implicit_setuptools:
         try:
             import setuptools  # noqa
-            implicit_setuptools = False
+            implicit_setuptools = FALSE
         except ImportError:
             pass
     if implicit_wheel:
         try:
             import wheel  # noqa
-            implicit_wheel = False
+            implicit_wheel = FALSE
         except ImportError:
             pass
 
@@ -140,7 +140,7 @@ def main():
     finally:
         # Clean up our temporary working directory
         if tmpdir:
-            shutil.rmtree(tmpdir, ignore_errors=True)
+            shutil.rmtree(tmpdir, ignore_errors=TRUE)
 
 
 DATA = b"""
