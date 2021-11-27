@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../srcs/libft.h"
 #include <string.h>
 
 int	test_ft_intlen(void)

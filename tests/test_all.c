@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../srcs/libft.h"
 #include "test.h"
 
 int	main(void)
@@ -53,8 +53,8 @@ int	main(void)
 	// test_ft_strmapi();
 	// printf("\nft_strncmp:\n\n");
 	// test_ft_strncmp();
-	// printf("\nft_strnstr:\n\n");
-	// test_ft_strnstr();
+	printf("\nft_strnstr:\n\n");
+	test_ft_strnstr();
 	// printf("\nft_strrchr:\n\n");
 	// test_ft_strrchr();
 	// // printf("\nft_strtrim:\n\n");

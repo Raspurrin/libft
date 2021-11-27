@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../srcs/libft.h"
 
 int	test_ft_strjoin(void)
 {

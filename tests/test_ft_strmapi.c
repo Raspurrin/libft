@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../srcs/libft.h"
 
 char	ft_toupper2(t_uint32 i, char c)
 {

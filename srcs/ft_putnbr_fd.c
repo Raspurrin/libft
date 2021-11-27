@@ -6,11 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:47 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/27 15:03:52 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(t_int32 nbr, t_int32 fd)
 {
@@ -18,7 +18,7 @@ void	ft_putnbr_fd(t_int32 nbr, t_int32 fd)
 
 	if (nbr == -2147483648)
 	{
-		write(fd, "-2147483648", 12);
+		write(fd, "-2147483648", 11);
 	}
 	else if (nbr < 0)
 	{

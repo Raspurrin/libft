@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:13:58 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:26:02 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 t_int32	ft_memcmp(const void *ptr1, const void *ptr2, t_size n)
 {
-	t_size			i;
+	t_size	i;
 	uint8_t	*ptr3;
 	uint8_t	*ptr4;
 

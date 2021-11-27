@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../srcs/libft.h"
 #include <ctype.h>
 
 int	test_ft_isprint(void)

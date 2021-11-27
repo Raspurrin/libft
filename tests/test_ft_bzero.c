@@ -1,4 +1,4 @@
-// #include "../libft.h"
+// #include "../srcs/libft.h"
 // #include <string.h>
 
 // int	main(void)

@@ -6,18 +6,18 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:34 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 20:18:02 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-
-t_size	ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
-	t_size	i;
+	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
+	{
 		i++;
+	}
 	return (i);
 }

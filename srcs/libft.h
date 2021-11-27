@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:11:04 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:12:19 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ typedef unsigned long long		t_uint64;
 typedef signed long long		t_int64;
 
 /**
- * @param content : The data contained in the element. The void * allows to store any kind of data.
+ * @param content : The data contained in the element. 
+ * The void * allows to store any kind of data.
  * @param next : The next element’s address or NULL if it’s the last element.
  */
 typedef struct s_list
@@ -103,10 +104,11 @@ void		*ft_memset(void *src, t_int32 c, t_size n);
  * @param n The amount of bytes the memory is filled with null terminators.
  * @return A pointer to the memory area of src.
  */
-void		*ft_bzero(void *src, t_size n);
+void		ft_bzero(void *src, t_size n);
 
 /**
- * Copies n bytes from memory area src to memory area dest. Memory areas may not overlap
+ * Copies n bytes from memory area src to memory area dest. 
+ * Memory areas may not overlap
  * @param dst Appointed memory to be filled.
  * @param src Memory area to be copied from.
  * @param n The amount of bytes copied from src to dest.
@@ -115,7 +117,8 @@ void		*ft_bzero(void *src, t_size n);
 void		*ft_memcpy(void *dst, const void *src, t_size n);
 
 /**
- * Copies n bytes from memory area src to memory area dest. Memory areas may overlap
+ * Copies n bytes from memory area src to memory area dest. 
+ * Memory areas may overlap
  * @param dst Appointed memory to be filled.
  * @param src Memory area to be copied from.
  * @param n The amount of bytes copied from src to dest.
@@ -124,16 +127,22 @@ void		*ft_memcpy(void *dst, const void *src, t_size n);
 void		*ft_memmove(void *dst, const void *src, t_size n);
 
 /**
- * Copies up to size - 1 characters from the NUL-terminated string src to dst, NUL-terminating the result. as long as size is larger than 0. A byte for NUL should be included in size. Src must be NUL-terminated.
+ * Copies up to size - 1 characters from the NUL-terminated 
+ * string src to dst, NUL-terminating the result. as long as size 
+ * is larger than 0. A byte for NUL 
+ * should be included in size. Src must be NUL-terminated.
  * @param dest Where src is to be copied to.
  * @param src The string to be copied to dest.
  * @param size How many characters are to be copied.
- * @return The total length of the string it tried to create: the initial length of dst plus the length of src.
+ * @return The total length of the string it tried to create: 
+ * the initial length of dst plus the length of src.
  */
 t_size		ft_strlcpy(char *dst, const char *src, t_size size);
 
 /**
- * Appends the NUL-terminated string src to the end of dst. It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+ * Appends the NUL-terminated string src to the end of dst. 
+ * It will append at most size - strlen(dst) - 1 bytes, 
+ * NUL-terminating the result.
  * @param dest The string that is to be appended upon. 
  * @param src The string that is to be appended to dest.
  * @param size How many characters are to be appended to dest.
@@ -176,25 +185,32 @@ char		*ft_strrchr(const char *str, t_int32 c);
  * @param str1 First string to be compared.
  * @param str2 Second string to be compared.
 * @param n Amount of bytes to be compared.
- * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 0 if they are equal.
+ * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 
+ * 0 if they are equal.
  */
 t_int32		ft_strncmp(const char *str1, const char *str2, t_size n);
 
 /**
- * Searches for the first occurance of c in ptr up to n. Checks a memory area instead of just a string and checks after null terminators.
+ * Searches for the first occurance of c in ptr up to n. 
+ * Checks a memory area instead of just a string 
+ * and checks after null terminators.
  * @param ptr Memory area in which the character will be searched.
  * @param value Value to be located.
  * @param n Number of bytes to be analyzed.
- * @return A pointer to the first occurance of c in str or NULL if t he character does not occur.
+ * @return A pointer to the first occurance of c in str 
+ * or NULL if t he character does not occur.
  */
 void		*ft_memchr(const void *ptr, t_int32 c, t_size n);
 
 /**
- * Compares str1 and str2 up to n bytes. It differs from strcmp in that it compares not just strings and it continues to check after null terminators.
+ * Compares str1 and str2 up to n bytes. It differs from strcmp 
+ * in that it compares not just strings and it continues 
+ * to check after null terminators.
  * @param ptr1 First memory area to be compared.
  * @param ptr2 Second memory area to be compared.
  * @param n Amount of bytes to be compared.
- * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 0 if they are equal.
+ * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 
+ * 0 if they are equal.
  */
 t_int32		ft_memcmp(const void *ptr1, const void *ptr2, t_size n);
 
@@ -203,7 +219,9 @@ t_int32		ft_memcmp(const void *ptr1, const void *ptr2, t_size n);
  * @param needle The string that has to be searched for in the haystack
  * @param haystack The string that has to be searched in.
  * @param n Number of bytes to be analyzed.
- * @return A pointer to the first character of the first occurance of needle in the haystack. NULL if haystack doesn't occur anywhere. Haystack if needle is empty.
+ * @return A pointer to the first character of the first occurance 
+ * of needle in the haystack. NULL if haystack doesn't occur anywhere. 
+ * Haystack if needle is empty.
  */
 char		*ft_strnstr(const char *haystack, const char *needle, t_size n);
 
@@ -215,10 +233,13 @@ char		*ft_strnstr(const char *haystack, const char *needle, t_size n);
 t_int32		ft_atoi(const char *str);
 
 /**
- * Allocates memory for an array of num objects of size and initializes all bytes in the allocated storage to zero.
+ * Allocates memory for an array of num objects of size and 
+ * initializes all bytes in the allocated storage to zero.
  * @param num Number of objects.
  * @param size Size of each object.
- * @return If allocation succeeds return a pointer to the first allocated byte that is suitably aligned for any object type. On failure, returns a null pointer.
+ * @return If allocation succeeds return a pointer to the first 
+ * allocated byte that is suitably aligned for any object type. 
+ * On failure, returns a null pointer.
  */
 void		*ft_calloc(t_size num, t_size size);
 
@@ -229,7 +250,8 @@ void		*ft_calloc(t_size num, t_size size);
  */
 char		*ft_strdup(const char *str);
 /**
- * Allocates (with malloc(3)) and returns a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’.
+ * Allocates (with malloc(3)) and returns a substring from the string ’s’. 
+ * The substring begins at index ’start’ and is of maximum size ’len’.
  * @param str The string from which to create the substring.
  * @param start The start index of the substring in the string ’s’.
  * @param len The maximum length of the substring.
@@ -237,43 +259,55 @@ char		*ft_strdup(const char *str);
  */
 char		*ft_substr(char const *str, t_uint32 start, t_size len);
 /**
- * Allocates (with malloc(3)) and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’.
+ * Allocates (with malloc(3)) and returns a new string, 
+ * which is the result of the concatenation of ’s1’ and ’s2’.
  * @param str1 The prefix string.
  * @param str2 The suffix string.
  * @return The new string. NULL if the allocation fails.
  */
 char		*ft_strjoin(char const *str1, char const *str2);
 /**
- * Allocates (with malloc(3)) and returns a copy of ’s1’ with the characters specified in ’set’ removed from the beginning and the end of the string.
+ * Allocates (with malloc(3)) and returns a copy of ’s1’ 
+ * with the characters specified in ’set’ removed from the beginning 
+ * and the end of the string.
  * @param str1 The string to be trimmed.
  * @param set The reference set of characters to trim.
  * @return The trimmed string. NULL if the allocation fails.
  */
 char		*ft_strtrim(char const *str1, char const *set);
 /**
- * Allocates (with malloc(3)) and returns an array of strings obtained by splitting ’s’ using the character ’c’ as a delimiter. The array must be ended by a NULL pointer.
+ * Allocates (with malloc(3)) and returns an array of strings 
+ * obtained by splitting ’s’ using the character ’c’ as a delimiter. 
+ * The array must be ended by a NULL pointer.
  * @param str The string to be split.
  * @param c The delimiter character.
- * @return The array of new strings resulting from the split. NULL if the allocation fails.
+ * @return The array of new strings resulting from the split. 
+ * NULL if the allocation fails.
  */
 char		**ft_split(char const *str, char c);
 /**
- * Allocates (with malloc(3)) and returns a string representing the integer received as an argument. Negative numbers must be handled.
+ * Allocates (with malloc(3)) and returns a string representing 
+ * the integer received as an argument. Negative numbers must be handled.
  * @param n the integer to convert.
  * @return The string representing the integer. NULL if the allocation fails.
  */
 char		*ft_itoa(t_int32 n);
 
 /**
- * Applies the function ’f’ to each character of the string ’s’ to create a new string (with malloc(3)) resulting from successive applications of ’f’.
+ * Applies the function ’f’ to each character of the string ’s’ 
+ * to create a new string (with malloc(3)) resulting from 
+ * successive applications of ’f’.
  * @param str The string on which to iterate.
  * @param f The function to apply to each character.
- * @return The string created from the successive applications of ’f’. Returns NULL if the allocation fails.
+ * @return The string created from the successive applications 
+ * of ’f’. Returns NULL if the allocation fails.
  */
 char		*ft_strmapi(char const *str, char (*f)(t_uint32, char));
 
 /**
- * Applies the function f to each character of the string passed as argument, and passing its index as first argument. Each character is passed by address to f to be modified if necessary
+ * Applies the function f to each character of the string 
+ * passed as argument, and passing its index as first argument. 
+ * Each character is passed by address to f to be modified if necessary
  * @param str The string on which to iterate.
  * @param f The function to apply to each character.
  * @return None.
@@ -344,7 +378,9 @@ void		*ft_realloc(void *ptr, t_size size);
 
 // Bonus content:
 /**
- * Allocates (with malloc(3)) and returns a new element. The variable ’content’ is initialized with the value of the parameter ’content’. The variable ’next’ is initialized to NULL.
+ * Allocates (with malloc(3)) and returns a new element. 
+ * The variable ’content’ is initialized with the value 
+ * of the parameter ’content’. The variable ’next’ is initialized to NULL.
  * @param content The content to create the new element with.
  * @return The new element.
  */
@@ -376,31 +412,42 @@ t_list		*ft_lstlast(t_list *lst);
  */
 void		ft_lstadd_back(t_list **lst, t_list *new);
 /**
- * Takes as a parameter an element and frees the memory of the element’s content using the function ’del’ given as a parameter and free the element. The memory of ’next’ must not be freed.
+ * Takes as a parameter an element and frees the memory 
+ * of the element’s content using the function ’del’ 
+ * given as a parameter and free the element. 
+ * The memory of ’next’ must not be freed.
  * @param lst The element to free.
  * @param del The address of the function used to delete the content.
  * @return None.
  */
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 /**
- * Deletes and frees the given element and every successor of that element, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL.
+ * Deletes and frees the given element and every successor 
+ * of that element, using the function ’del’ and free(3). 
+ * Finally, the pointer to the list must be set to NULL.
  * @param lst The adress of a pointer to an element.
- * @param del The adress of the function used to delete the content of the element.
+ * @param del The adress of the function 
+ * used to delete the content of the element.
  * @return None
  */
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 /**
- * Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
+ * Iterates the list ’lst’ and applies the function ’f’ 
+ * to the content of each element.
  * @param lst The adress of a pointer to an element.
  * @param f The adress of the function used to iterate on the list.
  * @return None.
  */
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 /**
- * Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.
+ * Iterates the list ’lst’ and applies the function ’f’ 
+ * to the content of each element. Creates a new list resulting 
+ * of the successive applications of the function ’f’. 
+ * The ’del’ function is used to delete the content of an element if needed.
  * @param lst The adress of a pointer to an element.
  * @param f The adress of the function used to iterate on the list.
- * @param del The adress of the function used to delete the content of an element if needed.
+ * @param del The adress of the function used to 
+ * delete the content of an element if needed.
  * @return The new list. NULL if the allocation fails.
  */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

@@ -6,13 +6,14 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2021/11/25 12:17:10 by mialbert         ###   ########.fr        #
+#    Updated: 2021/11/27 19:31:46 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 #SRCS := $(shell find . -iname "ft_*.c")
+TESTS := $(shell find ../tests -iname "test_*.c")
 SRCS = ft_memmove.c ft_strjoin.c ft_isalnum.c ft_isdigit.c ft_substr.c ft_lstsize.c ft_memchr.c \
 ft_itoa.c ft_isspace.c ft_memcmp.c ft_strchr.c ft_strlcat.c ft_calloc.c ft_putstr_fd.c ft_intlen.c \
 ft_strtrim.c ft_tolower.c ft_memcpy.c ft_putendl_fd.c ft_strnstr.c ft_lstadd_front.c ft_putchar_fd.c \
@@ -25,10 +26,8 @@ NAME = libft.a
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $< -I .
-
 $(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -c $(OBJS) -I .
 	ar rcs $(NAME) $(OBJS)
 
 clean:
@@ -39,7 +38,13 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean re
+
+#test_all :
+#	$(CC) $(CFLAGS) $(TESTS) $(NAME) && ./a.out && norminette
+
+# %.o: %.c
+# 	$(CC) $(CFLAGS) -o $@ -c $< -I .
 
 #	@echo "$(OBJS) removed"
 

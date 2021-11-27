@@ -6,11 +6,59 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:48 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:19:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/27 19:31:05 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../libft.h"
+#include "libft.h"
+
+static size_t	ft_wordlength(const char *str, char del)
+{
+	size_t	counter;
+
+	counter = 0;
+	while (*str && *str != del)
+	{
+		counter++;
+		str++;
+	}
+	return (counter);
+}
+// Allocates (with malloc(3)) and returns an array
+// of strings obtained by splitting ’s’ using the
+// character ’c’ as a delimiter. The array must be
+// ended by a NULL pointer.
+
+char	**ft_split(const char *str, char del)
+{
+	char	**out;
+	char	*start;
+	char	*end;
+	int		i;
+	int		counter;
+
+	counter = 0;
+	out = malloc (sizeof(char *) * ft_wcount((char *)str, del));
+	while (*str)
+	{
+		while (*str == del && *str)
+			str++;
+		out[counter] = malloc(sizeof(char) * \
+					(ft_wcount((char *)str, del) + 1));
+		i = 0;
+		while (*str != del && *str)
+		{
+			out[counter][i] = *str;
+			str++;
+			i++;
+		}
+		out[counter][i] = '\0';
+		counter++;
+	}
+	return (out);
+}
+
+// #include "libft.h"
 
 // static char **ft_alloc(char **out, const char *str, 
 //						t_size wcount, t_size *start)

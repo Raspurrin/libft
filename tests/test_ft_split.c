@@ -1,4 +1,4 @@
-// #include "../libft.h"
+// #include "../srcs/libft.h"ibft.h"
 
 // int	test_ft_split(void)
 // {
