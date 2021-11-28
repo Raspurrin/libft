@@ -6,12 +6,41 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:07 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/28 02:24:58 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 
+char	*ft_strtrim(char const *str1, char const *set)
+{
+	char	*str2;
+	char	*out;
+	t_size	len;
+	t_size	i;
+
+	str2 = (char *)str1;
+	len = ft_strlen(str2);
+	i = 0;
+	if (str1[i] == set[i])
+	{
+		while (str1[i] == set[i])
+			i++;
+		if (set[i] == '\0')
+			str2 += i;
+	}
+	if (str1[len] == set[len])
+	{
+		while (str1[len] == set[len] && str1[len] != set[0])
+			len--;
+		if (str1[len] == set[0])
+			str2[len] = '\0';
+	}
+	out = malloc (len + 1 * sizeof(char));
+	ft_strlcpy(out, str2, len);
+	return (out);
+}
+// ---------------------------------------------------------
 // char	*ft_strtrim(char const *str1, char const *set)
 // {
 // 	t_int32	i;

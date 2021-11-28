@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:51 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/28 02:02:30 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,42 @@
 char	*ft_strnstr(const char *haystack, const char *needle, t_size n)
 {
 	t_size	i;
+	t_size	j;
 	t_size	start;
 
 	i = 0;
-	if (!needle)
+	j = 0;
+	if (!*needle)
 		return ((char *)haystack);
-	while (i < n)
+	while (haystack[i] && i < n)
 	{
-		if (needle[i] == haystack[i])
+		if (needle[j] == haystack[i])
 		{
 			start = i;
-			while (needle[i] == haystack[i])
+			while (i < n && needle[j] && needle[j] == haystack[i])
 			{
-				if (needle[i] == '\0')
-					return ((char *)haystack + start);
 				i++;
+				j++;
 			}
+			if (needle[j] == '\0')
+				return ((char *)haystack + start);
 		}
+		j = 0;
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char str1[] = "Suffer and have fun!";
+// 	char str2[] = "Suffer and have fun!";
+// 	// char str3[] = "Suffer and have fun!";
+// 	// char str4[] = "Suffer and have fun!";
+// 	char str5[] = "have";
+// 	// char str6[] = "a";
+// 	char str7[] = "";
+// 	printf("Your function: %s\n", ft_strnstr(str1, str5, 21));
+// 	printf("Your function: %s\n", ft_strnstr(str2, str7, 3));
+// 	return (0);	
+// }
