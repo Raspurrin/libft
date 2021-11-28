@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/28 01:23:09 by mialbert          #+#    #+#             */
+/*   Updated: 2021/11/28 01:23:18 by mialbert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef TEST_H
 # define TEST_H
 
 int	test_ft_atoi(void);
-int test_ft_atoi(void);
-//int test_ft_bzero(void);
+int	test_ft_atoi(void);
+int	test_ft_bzero(void);
 int	test_ft_calloc(void);
 int	test_ft_intlen(void);
 int	test_ft_isalnum(void);

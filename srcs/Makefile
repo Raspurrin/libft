@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2021/11/27 19:31:46 by mialbert         ###   ########.fr        #
+#    Updated: 2021/11/28 01:20:31 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,31 +17,40 @@ TESTS := $(shell find ../tests -iname "test_*.c")
 SRCS = ft_memmove.c ft_strjoin.c ft_isalnum.c ft_isdigit.c ft_substr.c ft_lstsize.c ft_memchr.c \
 ft_itoa.c ft_isspace.c ft_memcmp.c ft_strchr.c ft_strlcat.c ft_calloc.c ft_putstr_fd.c ft_intlen.c \
 ft_strtrim.c ft_tolower.c ft_memcpy.c ft_putendl_fd.c ft_strnstr.c ft_lstadd_front.c ft_putchar_fd.c \
-ft_toupper.c ft_memset.c ft_strncmp.c ft_lstiter.c ft_split2.c ft_realloc.c ft_isprint.c ft_isalpha.c \
+ft_toupper.c ft_memset.c ft_strncmp.c ft_lstiter.c ft_realloc.c ft_isprint.c ft_isalpha.c \
 ft_lstadd_back.c ft_lstdelone.c ft_pow.c ft_strdup.c ft_putnbr_fd.c ft_bzero.c ft_lstclear.c ft_atoi.c \
 ft_lstnew.c ft_wcount.c ft_strrchr.c ft_strmapi.c ft_lstmap.c ft_isascii.c ft_strtrim2.c ft_strlcpy.c \
 ft_split.c ft_strlen.c
 OBJS = $(SRCS:.c=.o)
+TEMP = $(shell find ../tests -iname "test_*.c" | cut -d '/' -f 3)
+TOBJS = $(TEMP:.c=.o)
+TNAME = test.a
 NAME = libft.a
+HEADER = libft.h
 
 all: $(NAME)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $< -I .
+
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -c $(OBJS) -I .
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(TOBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(TNAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
 
-#test_all :
-#	$(CC) $(CFLAGS) $(TESTS) $(NAME) && ./a.out && norminette
+test_all : all
+	$(CC) $(CFLAGS) -c $(TESTS) -I .
+	ar rcs $(TNAME) $(TOBJS)
+	$(CC) $(CFLAGS) ../tests/test_all.c $(TNAME) $(NAME) && ./a.out
+# 	norminette $(SRCS) $(HEADER)
 
 # %.o: %.c
 # 	$(CC) $(CFLAGS) -o $@ -c $< -I .

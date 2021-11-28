@@ -6,17 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 16:12:19 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/27 23:13:44 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-//# include <stdint.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-//# include <stdt_bool.h>
 # include <stdint.h>
 # include <string.h>
 
@@ -24,7 +22,6 @@
 # define TRUE 1
 
 typedef int						t_bool;
-typedef signed char				t_int8;
 typedef unsigned char			t_uint8;
 typedef unsigned int			t_uint32;
 typedef signed int				t_int32;
@@ -35,7 +32,7 @@ typedef signed long long		t_int64;
 /**
  * @param content : The data contained in the element. 
  * The void * allows to store any kind of data.
- * @param next : The next element’s address or NULL if it’s the last element.
+ * @param next : The next element`s address or NULL if it`s the last element.
  */
 typedef struct s_list
 {
@@ -250,25 +247,25 @@ void		*ft_calloc(t_size num, t_size size);
  */
 char		*ft_strdup(const char *str);
 /**
- * Allocates (with malloc(3)) and returns a substring from the string ’s’. 
- * The substring begins at index ’start’ and is of maximum size ’len’.
+ * Allocates (with malloc(3)) and returns a substring from the string `s`. 
+ * The substring begins at index `start` and is of maximum size `len`.
  * @param str The string from which to create the substring.
- * @param start The start index of the substring in the string ’s’.
+ * @param start The start index of the substring in the string `s`.
  * @param len The maximum length of the substring.
  * @return The substring. NULL if the allocation fails.
  */
 char		*ft_substr(char const *str, t_uint32 start, t_size len);
 /**
  * Allocates (with malloc(3)) and returns a new string, 
- * which is the result of the concatenation of ’s1’ and ’s2’.
+ * which is the result of the concatenation of `s1` and `s2`.
  * @param str1 The prefix string.
  * @param str2 The suffix string.
  * @return The new string. NULL if the allocation fails.
  */
 char		*ft_strjoin(char const *str1, char const *str2);
 /**
- * Allocates (with malloc(3)) and returns a copy of ’s1’ 
- * with the characters specified in ’set’ removed from the beginning 
+ * Allocates (with malloc(3)) and returns a copy of `s1` 
+ * with the characters specified in `set` removed from the beginning 
  * and the end of the string.
  * @param str1 The string to be trimmed.
  * @param set The reference set of characters to trim.
@@ -277,14 +274,14 @@ char		*ft_strjoin(char const *str1, char const *str2);
 char		*ft_strtrim(char const *str1, char const *set);
 /**
  * Allocates (with malloc(3)) and returns an array of strings 
- * obtained by splitting ’s’ using the character ’c’ as a delimiter. 
+ * obtained by splitting `s` using the character `c` as a delimiter. 
  * The array must be ended by a NULL pointer.
  * @param str The string to be split.
  * @param c The delimiter character.
  * @return The array of new strings resulting from the split. 
  * NULL if the allocation fails.
  */
-char		**ft_split(char const *str, char c);
+char		**ft_split(char const *str, char del);
 /**
  * Allocates (with malloc(3)) and returns a string representing 
  * the integer received as an argument. Negative numbers must be handled.
@@ -294,13 +291,13 @@ char		**ft_split(char const *str, char c);
 char		*ft_itoa(t_int32 n);
 
 /**
- * Applies the function ’f’ to each character of the string ’s’ 
+ * Applies the function `f` to each character of the string `s` 
  * to create a new string (with malloc(3)) resulting from 
- * successive applications of ’f’.
+ * successive applications of `f`.
  * @param str The string on which to iterate.
  * @param f The function to apply to each character.
  * @return The string created from the successive applications 
- * of ’f’. Returns NULL if the allocation fails.
+ * of `f`. Returns NULL if the allocation fails.
  */
 char		*ft_strmapi(char const *str, char (*f)(t_uint32, char));
 
@@ -315,7 +312,7 @@ char		*ft_strmapi(char const *str, char (*f)(t_uint32, char));
 void		ft_striteri(char *str, void (*f)(t_uint32, char*));
 
 /**
- * Outputs the character ’c’ to the given file descriptor.
+ * Outputs the character `c` to the given file descriptor.
  * @param str The character to output.
  * @param f The file descriptor on which to write.
  * @return None.
@@ -323,7 +320,7 @@ void		ft_striteri(char *str, void (*f)(t_uint32, char*));
 void		ft_putchar_fd(char c, t_int32 fd);
 
 /**
- * Outputs the string ’s’ to the given file descriptor.
+ * Outputs the string `s` to the given file descriptor.
  * @param str The string to output.
  * @param fd The file descriptor on which to write.
  * @return None.
@@ -331,7 +328,7 @@ void		ft_putchar_fd(char c, t_int32 fd);
 void		ft_putstr_fd(char *str, t_int32 fd);
 
 /**
- * Outputs the string ’s’ to the given file descriptor, followed by a newline.
+ * Outputs the string `s` to the given file descriptor, followed by a newline.
  * @param str The string to output.
  * @param fd The file descriptor on which to write.
  * @return None.
@@ -339,7 +336,7 @@ void		ft_putstr_fd(char *str, t_int32 fd);
 void		ft_putendl_fd(char *str, t_int32 fd);
 
 /**
- * Outputs the integer ’n’ to the given file descriptor.
+ * Outputs the integer `n` to the given file descriptor.
  * @param nbr The integer to output.
  * @param fd The file descriptor on which to write.
  * @return None.
@@ -379,14 +376,14 @@ void		*ft_realloc(void *ptr, t_size size);
 // Bonus content:
 /**
  * Allocates (with malloc(3)) and returns a new element. 
- * The variable ’content’ is initialized with the value 
- * of the parameter ’content’. The variable ’next’ is initialized to NULL.
+ * The variable `content` is initialized with the value 
+ * of the parameter `content`. The variable `next` is initialized to NULL.
  * @param content The content to create the new element with.
  * @return The new element.
  */
 t_list		*ft_lstnew(void *content);
 /**
- * Adds the element ’new’ at the beginning of the list.
+ * Adds the element `new` at the beginning of the list.
  * @param lst The address of a pointer to the first link of a list.
  * @param new The address of a pointer to the element to be added to the list.
  * @return None
@@ -405,7 +402,7 @@ int			ft_lstsize(t_list *lst);
  */
 t_list		*ft_lstlast(t_list *lst);
 /**
- * Adds the element ’new’ at the end of the list.
+ * Adds the element `new` at the end of the list.
  * @param lst The address of a pointer to the first link of a list.
  * @param new The address of a pointer to the element to be added to the list.
  * @return
@@ -413,9 +410,9 @@ t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 /**
  * Takes as a parameter an element and frees the memory 
- * of the element’s content using the function ’del’ 
+ * of the element`s content using the function `del` 
  * given as a parameter and free the element. 
- * The memory of ’next’ must not be freed.
+ * The memory of `next` must not be freed.
  * @param lst The element to free.
  * @param del The address of the function used to delete the content.
  * @return None.
@@ -423,7 +420,7 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 /**
  * Deletes and frees the given element and every successor 
- * of that element, using the function ’del’ and free(3). 
+ * of that element, using the function `del` and free(3). 
  * Finally, the pointer to the list must be set to NULL.
  * @param lst The adress of a pointer to an element.
  * @param del The adress of the function 
@@ -432,7 +429,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
  */
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 /**
- * Iterates the list ’lst’ and applies the function ’f’ 
+ * Iterates the list `lst` and applies the function `f` 
  * to the content of each element.
  * @param lst The adress of a pointer to an element.
  * @param f The adress of the function used to iterate on the list.
@@ -440,10 +437,10 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
  */
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 /**
- * Iterates the list ’lst’ and applies the function ’f’ 
+ * Iterates the list `lst` and applies the function `f` 
  * to the content of each element. Creates a new list resulting 
- * of the successive applications of the function ’f’. 
- * The ’del’ function is used to delete the content of an element if needed.
+ * of the successive applications of the function `f`. 
+ * The `del` function is used to delete the content of an element if needed.
  * @param lst The adress of a pointer to an element.
  * @param f The adress of the function used to iterate on the list.
  * @param del The adress of the function used to 
