@@ -6,12 +6,89 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:48 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/28 00:41:59 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/28 12:38:48 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int getnumofwords(char *str, char del)
+{
+	int wordcount;
+
+	wordcount = 0;
+	if (!str || !del)
+		return (0);
+	while (*str != '\0')
+	{
+		while (*str == del && *str)
+			str++;
+		if (*str != del && *str)
+			wordcount++;
+		while (*str != del && *str)
+			str++;
+	}
+	return (wordcount);
+}
+// static char*
+//Noice :)
+static int ft_wordlength(const char *str, char del)
+{
+	int	counter;
+	
+	counter = 0;
+	while(*str && *str != del)
+	{
+		counter++;
+		str++;
+	}
+	return (counter);
+}
+
+char	**ft_split(const char *str, char del)
+{
+	char	**out;
+	int		i;
+	int		counter;
+	int		wlen;
+	counter = 0;
+	if(!getnumofwords((char*)str, del))
+	{
+		out = malloc(sizeof(char*) * 1);
+		if (!out)
+			return NULL;
+		out[0] = NULL;
+		return out;
+	}
+	wlen = getnumofwords((char*)str, del);
+	out = malloc(sizeof(char*) * (wlen + 1));
+	if (!out)
+		return NULL;
+	while(*str)
+	{
+		while (*str == del && *str)
+			str++;
+		out[counter] = malloc(sizeof(char) * ((ft_wordlength((char*)str, del) + 1)));
+		if (!out[counter])
+			return NULL;
+		i = 0;
+		while (*str != del && *str)
+		{
+			out[counter][i] = *str;
+			str++;
+			i++;
+		}
+
+		out[counter][i] = '\0';
+		counter++;
+		if(counter == wlen)
+			break;
+	}
+	out[counter] = NULL;
+	return out;
+}
+
+// --------------------------------------------------------
 // static int	getnumofwords(char *str, char del)
 // {
 // 	int	wordcount;
@@ -85,58 +162,58 @@
 // }
 
 // ---------------------------------------------------------
-static size_t	ft_wordlength(const char *str, char del)
-{
-	size_t	i;
+// static size_t	ft_wordlength(const char *str, char del)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (*str && *str != del)
-	{
-		i++;
-		str++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while (*str && *str != del)
+// 	{
+// 		i++;
+// 		str++;
+// 	}
+// 	return (i);
+// }
 
-char	**ft_malloc(int wamount)
-{
-	char	**out;
+// char	**ft_malloc(int wamount)
+// {
+// 	char	**out;
 
-	if (!wamount)
-	{
-		out = malloc(sizeof(char *) * 1);
-		out[0] = NULL;
-	}
-	else
-		out = malloc (sizeof(char *) * wamount);
-	return (out);
-}
+// 	if (!wamount)
+// 	{
+// 		out = malloc(sizeof(char *) * 1);
+// 		out[0] = NULL;
+// 	}
+// 	else
+// 		out = malloc (sizeof(char *) * wamount);
+// 	return (out);
+// }
 
-char	**ft_split(const char *str, char del)
-{
-	char	**out;
-	size_t	i;
-	size_t	wcount;
-	size_t	wamount;
+// char	**ft_split(const char *str, char del)
+// {
+// 	char	**out;
+// 	size_t	i;
+// 	size_t	wcount;
+// 	size_t	wamount;
 
-	wcount = 0;
-	wamount = ft_wcount((char *)str, del);
-	out = ft_malloc(wamount);
-	while (*str && wcount < wamount)
-	{
-		while (*str == del && *str)
-			str++;
-		out[wcount] = malloc(sizeof(char) \
-					* ft_wordlength((char *)str, del) + 1);
-		i = 0;
-		while (*str != del && *str)
-			out[wcount][i++] = *str++;
-		out[wcount][i] = '\0';
-		wcount++;
-	}
-	out[wcount] = NULL;
-	return (out);
-}
+// 	wcount = 0;
+// 	wamount = ft_wcount((char *)str, del);
+// 	out = ft_malloc(wamount);
+// 	while (*str && wcount < wamount)
+// 	{
+// 		while (*str == del && *str)
+// 			str++;
+// 		out[wcount] = malloc(sizeof(char) 
+// 					* ft_wordlength((char *)str, del) + 1);
+// 		i = 0;
+// 		while (*str != del && *str)
+// 			out[wcount][i++] = *str++;
+// 		out[wcount][i] = '\0';
+// 		wcount++;
+// 	}
+// 	out[wcount] = NULL;
+// 	return (out);
+// }
 
 // -------------------------------------------------------
 // #include "libft.h"
