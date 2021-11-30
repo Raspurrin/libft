@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:13:51 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/30 22:26:43 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ t_size	ft_intlen(t_int32 nbr)
 	if (nbr < 0)
 	{
 		if (nbr == -2147483648)
-			return (10);
-		nbr *= -1;
+			return (11);
+		i++;
+		nbr = ft_abs(nbr);
 	}
 	while (nbr > 0)
 	{
