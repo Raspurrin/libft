@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:38 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/30 01:56:40 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 void	*ft_realloc(void *ptr, t_size size)
 {
-	t_size	i;
 	char	*out;
-	char	*ptr2;
 
-	i = 0;
+	if (!ptr)
+		return (NULL);
 	out = malloc(size);
-	ptr2 = (char *)ptr;
-	while (i < size)
-	{
-		out[i] = ptr2[i];
-		i++;
-	}
+	if (!out)
+		return (NULL);
+	while (size-- > 0)
+		*out++ = (*(char *)ptr++);
 	return (out);
 }

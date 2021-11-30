@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:21 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/30 01:28:40 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	*ft_memset(void *src, t_int32 c, t_size n)
 {
-	uint8_t	*src2;
-
-	src2 = (uint8_t *)src;
 	while (n-- > 0)
-		src2[n] = c;
+		((t_uint8 *)src)[n] = c;
 	return (src);
 }
