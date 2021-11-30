@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:13 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/27 15:31:57 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/30 20:37:48 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *str, t_uint32 start, t_size len)
 	slen = ft_strlen(str);
 	if (!str)
 		return (NULL);
-	if (start > len)
+	if (start > len || start > slen)
 		return (ft_strdup(""));
 	if (len > slen - start)
 		return (ft_strdup(str + start));

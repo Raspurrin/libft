@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:55 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/28 02:42:21 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:52:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strchr(const char *str, t_int32 c)
 {
 	char	*str2;
 
-	if (!str)
-		return (NULL);
+	if (c < 0 || c > 255)
+		return ((char *)str);
 	str2 = (char *)str;
 	while (*str2 != c && *str2)
 		str2++;
