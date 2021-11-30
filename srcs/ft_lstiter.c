@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:11:57 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Created: 2021/11/29 20:18:32 by mialbert          #+#    #+#             */
+/*   Updated: 2021/11/30 00:43:48 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
-
-	tmp = lst;
-	while (tmp != 0)
+	while (lst->next != 0)
 	{
-		f(tmp->content);
-		tmp = tmp->content;
+		f(lst->content);
+		lst = lst->next;
 	}
+	f(lst->content);
 }
