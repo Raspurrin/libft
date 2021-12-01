@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:48 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/01 18:49:50 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/01 19:52:29 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@
 // 	return (out);
 // }
 
-// static size_t	populatearr(char **out, const char *str, char del, size_t *arr)
+// static size_t	populatearr(char **out, const char 
+// *str, char del, size_t *arr)
 // {
 // 	size_t	i;
 
@@ -176,7 +177,7 @@
 // 	{
 // 		while (*str == del && *str)
 // 			str++;
-// 		out[wcount] = malloc(sizeof(char) * \
+// 		out[wcount] = malloc(sizeof(char) * 
 // 					((ft_wordlength((char *)str, del) + 1)));
 // 		if (!out[wcount])
 // 			return (NULL);
