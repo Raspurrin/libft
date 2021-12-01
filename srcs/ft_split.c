@@ -6,30 +6,32 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:47:06 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/01 18:52:17 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 00:10:14 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_allocate(char **out, const char *str, char delim, t_size wcount)
+static t_bool	allocate(char **out, const char *str, char del, \
+				size_t wcount)
 {
-	t_size	windex;
-	t_size	outlen;
+	size_t	count;
+	size_t	index;
 
-	windex = 0;
-	outlen = 0;
-	while (windex < wcount)
+	index = 0;
+	while (*str && index < wcount)
 	{
-		while (*str == delim)
+		count = 0;
+		while (*str == del && *str)
 			str++;
-		while (str[outlen] != delim)
-			outlen++;
-		out[windex] = ft_substr(str, 0, outlen);
-		if (!out[windex])
+		while (str[count] && str[count] != del)
+			count++;
+		out[index] = malloc(sizeof(char) * (count + 1));
+		if (!out[index])
 			return (FALSE);
-		str += outlen;
-		windex++;
+		ft_strlcpy(out[index], str, count + 1);
+		str += count;
+		index++;
 	}
 	return (TRUE);
 }
@@ -43,22 +45,22 @@ void	ft_cleanup(char **out)
 	}
 }
 
-char	**ft_split(const char *str, char delim)
+char	**ft_split(const char *str, char del)
 {
-	t_size	wcount;
 	char	**out;
+	size_t	wcount;
 
 	if (!str)
 		return (NULL);
-	wcount = ft_wcount(str, delim);
-	out = (char **)ft_calloc(wcount + 1, sizeof(char *));
+	wcount = ft_wcount(str, del);
+	out = malloc(sizeof(char *) * (wcount + 1));
 	if (!out)
 		return (NULL);
-	if (!ft_allocate(out, str, delim, wcount))
+	if (!allocate(out, str, del, wcount))
 	{
 		ft_cleanup(out);
-		free(out);
 		return (NULL);
 	}
+	out[wcount] = NULL;
 	return (out);
 }

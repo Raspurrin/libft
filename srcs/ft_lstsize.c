@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:13:43 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/01 17:09:50 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/01 20:27:23 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_lstsize(t_list *lst)
 
 	counter = lst;
 	i = 0;
+	if (!lst)
+		return (0);
 	while (counter != NULL)
 	{
 		counter = counter->next;
