@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2021/12/02 00:45:31 by mialbert         ###   ########.fr        #
+#    Updated: 2021/12/02 00:50:39 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,8 +83,8 @@ fclean: clean
 
 re: fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY: all clean fclean re
