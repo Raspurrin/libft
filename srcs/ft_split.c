@@ -6,17 +6,17 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:47:06 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 00:10:14 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 00:21:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static t_bool	allocate(char **out, const char *str, char del, \
-				size_t wcount)
+				t_size wcount)
 {
-	size_t	count;
-	size_t	index;
+	t_size	count;
+	t_size	index;
 
 	index = 0;
 	while (*str && index < wcount)
@@ -48,7 +48,7 @@ void	ft_cleanup(char **out)
 char	**ft_split(const char *str, char del)
 {
 	char	**out;
-	size_t	wcount;
+	t_size	wcount;
 
 	if (!str)
 		return (NULL);
