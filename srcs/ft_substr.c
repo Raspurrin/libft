@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:13 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/01 20:48:34 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 00:48:54 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,3 @@ char	*ft_substr(char const *str, t_uint32 start, t_size len)
 	out[len] = '\0';
 	return (out);
 }
-
-	// t_size	i;
-	// char	*out;
-
-	// i = 0;
-	// out = malloc(len - start * sizeof(char));
-	// while (i < len)
-	// {
-	// 	out[i++] = ((char *)str)[start++];
-	// }
-	// ((char *)out)[i] = '\0';
-	// return ((char *)out);

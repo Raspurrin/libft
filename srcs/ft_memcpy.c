@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:08 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 16:54:52 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 00:47:42 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,3 @@ void	*ft_memcpy(void *dst, const void *src, t_size n)
 	}
 	return (dst);
 }
-
-	// while (n-- > 0 && dst != src)
-	// 	*((char *)dst++) = (*(char *)src++);
-	// return (dst);

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:51 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/29 17:45:01 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 00:48:46 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, t_size n)
 	}
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char str1[] = "Suffer and have fun!";
-// 	char str2[] = "Suffer and have fun!";
-// 	// char str3[] = "Suffer and have fun!";
-// 	// char str4[] = "Suffer and have fun!";
-// 	char str5[] = "have";
-// 	// char str6[] = "a";
-// 	char str7[] = "";
-// 	printf("Your function: %s\n", ft_strnstr(str1, str5, 21));
-// 	printf("Your function: %s\n", ft_strnstr(str2, str7, 3));
-// 	return (0);	
-// }
