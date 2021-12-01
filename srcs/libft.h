@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/27 23:13:44 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/11/30 22:54:09 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <stdint.h>
 # include <string.h>
 
@@ -46,39 +45,42 @@ typedef struct s_list
  * @return Whether c is a space.
  */
 t_bool		ft_isspace(t_int32 c);
+
 /**
  * Checks if c is an alphabetical character.
  * @param c The character.
  * @return Whether c is an alphabetical character.
  */
 t_bool		ft_isalpha(t_int32 c);
+
 /**
  * Checks if c is a number.
  * @param c The character.
  * @return Whether c is a number.
  */
 t_bool		ft_isdigit(t_int32 c);
+
 /**
  * Checks if c is a alpha numeric character (alphabetic or number)
  * @param c The character.
  * @return Whether c is a alphanumeric character.
  */
 t_bool		ft_isalnum(t_int32 c);
+
 /**
  * Checks if c is an ASCII character.
  * @param c The character.
  * @return Whether c is an ASCII character.
  */
 t_bool		ft_isascii(t_int32 c);
+
 /**
  * Checks if c is a printable character.
  * @param c The character.
  * @return Whether c is a a printable character.
  */
 t_bool		ft_isprint(t_int32 c);
-//
-//---------------------------------------------------------------
-//
+
 /** 
  * Checks the length of str.
  * @param str A string.
@@ -246,6 +248,7 @@ void		*ft_calloc(t_size num, t_size size);
  * @return A pointer to a new memory location with the duplicated string.
  */
 char		*ft_strdup(const char *str);
+
 /**
  * Allocates (with malloc(3)) and returns a substring from the string `s`. 
  * The substring begins at index `start` and is of maximum size `len`.
@@ -255,6 +258,7 @@ char		*ft_strdup(const char *str);
  * @return The substring. NULL if the allocation fails.
  */
 char		*ft_substr(char const *str, t_uint32 start, t_size len);
+
 /**
  * Allocates (with malloc(3)) and returns a new string, 
  * which is the result of the concatenation of `s1` and `s2`.
@@ -263,6 +267,7 @@ char		*ft_substr(char const *str, t_uint32 start, t_size len);
  * @return The new string. NULL if the allocation fails.
  */
 char		*ft_strjoin(char const *str1, char const *str2);
+
 /**
  * Allocates (with malloc(3)) and returns a copy of `s1` 
  * with the characters specified in `set` removed from the beginning 
@@ -271,7 +276,8 @@ char		*ft_strjoin(char const *str1, char const *str2);
  * @param set The reference set of characters to trim.
  * @return The trimmed string. NULL if the allocation fails.
  */
-char		*ft_strtrim(char const *str1, char const *set);
+char		*ft_strtrim(char const *str, char const *set);
+
 /**
  * Allocates (with malloc(3)) and returns an array of strings 
  * obtained by splitting `s` using the character `c` as a delimiter. 
@@ -282,6 +288,7 @@ char		*ft_strtrim(char const *str1, char const *set);
  * NULL if the allocation fails.
  */
 char		**ft_split(char const *str, char del);
+
 /**
  * Allocates (with malloc(3)) and returns a string representing 
  * the integer received as an argument. Negative numbers must be handled.
@@ -365,6 +372,7 @@ t_size		ft_intlen(t_int32 nbr);
  * @return 
  */
 t_size		ft_pow(t_int64 base, t_int32 power);
+
 /**
  * Resizes memory that has been allocated through malloc or calloc.
  * @param ptr
@@ -372,6 +380,13 @@ t_size		ft_pow(t_int64 base, t_int32 power);
  * @return 
  */
 void		*ft_realloc(void *ptr, t_size size);
+
+/**
+ * Returns absolute value of x
+ * @param x
+ * @return absolute value of x
+ */
+t_int32		ft_abs(t_int32 x);
 
 // Bonus content:
 /**
@@ -382,6 +397,7 @@ void		*ft_realloc(void *ptr, t_size size);
  * @return The new element.
  */
 t_list		*ft_lstnew(void *content);
+
 /**
  * Adds the element `new` at the beginning of the list.
  * @param lst The address of a pointer to the first link of a list.
@@ -389,18 +405,21 @@ t_list		*ft_lstnew(void *content);
  * @return None
  */
 void		ft_lstadd_front(t_list **lst, t_list *new);
+
 /**
  * Counts the number of elements in a list.
  * @param lst The beginning of the list.
  * @return Length of the list.
  */
 int			ft_lstsize(t_list *lst);
+
 /**
  * Returns the last element of the list.
  * @param lst The beginning of the list.
  * @return Last element of the list.
  */
 t_list		*ft_lstlast(t_list *lst);
+
 /**
  * Adds the element `new` at the end of the list.
  * @param lst The address of a pointer to the first link of a list.
@@ -408,6 +427,7 @@ t_list		*ft_lstlast(t_list *lst);
  * @return
  */
 void		ft_lstadd_back(t_list **lst, t_list *new);
+
 /**
  * Takes as a parameter an element and frees the memory 
  * of the element`s content using the function `del` 
@@ -418,6 +438,7 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
  * @return None.
  */
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
+
 /**
  * Deletes and frees the given element and every successor 
  * of that element, using the function `del` and free(3). 
@@ -428,6 +449,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
  * @return None
  */
 void		ft_lstclear(t_list **lst, void (*del)(void*));
+
 /**
  * Iterates the list `lst` and applies the function `f` 
  * to the content of each element.
@@ -436,6 +458,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
  * @return None.
  */
 void		ft_lstiter(t_list *lst, void (*f)(void *));
+
 /**
  * Iterates the list `lst` and applies the function `f` 
  * to the content of each element. Creates a new list resulting 

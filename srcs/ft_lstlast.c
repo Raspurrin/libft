@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:11:29 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 14:13:30 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:01:00 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst->next != 0)
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
 }

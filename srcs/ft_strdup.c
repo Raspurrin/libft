@@ -6,11 +6,12 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:02 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 19:54:06 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/01 12:25:23 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strdup(const char *str)
 {

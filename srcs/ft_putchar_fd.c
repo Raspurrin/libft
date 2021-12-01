@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, t_int32 fd)
 {
-	if (!c)
-		return ;
 	write(fd, &c, 1);
 }

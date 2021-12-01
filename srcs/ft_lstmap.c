@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:12:04 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:08:33 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,19 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list			*tmp;
-	t_list			*tmp2;
-	struct s_list	*t_list2;
+	struct s_list	*lst2;
 
-	t_list2 = malloc(sizeof(t_list));
-	if (!t_list2)
+	lst2 = malloc(sizeof(t_list));
+	if (!lst2)
 		return (NULL);
 	tmp = lst;
-	tmp2 = t_list2;
 	while (tmp != 0)
 	{
 		if (!(f(tmp->content)))
 			ft_lstdelone(tmp->content, del);
-		tmp2->content = f(tmp->content);
-		tmp2 = t_list2->next;
-		tmp = lst->next;
+		lst2->content = f(tmp->content);
+		lst2 = lst2->next;
+		tmp = tmp->next;
 	}
-	return (t_list2);
+	return (lst2);
 }

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:11:43 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/27 23:19:51 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:56:08 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*tmp;
 
 	tmp = *lst;
-	while (tmp != 0)
+	while (tmp->next != NULL)
 	{
-		del(tmp->content);
+		del(tmp);
 		free(tmp);
 		tmp = tmp->next;
 	}
+	tmp = NULL;
 }
