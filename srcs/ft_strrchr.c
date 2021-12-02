@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:57 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 15:32:08 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 20:37:06 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ char	*ft_strrchr(const char *str, t_int32 c)
 
 	len = ft_strlen((char *)str);
 	str2 = (char *)str + len;
-	if (c < 0 || c > 255)
+	if (!ft_isascii(c))
 		return ((char *)str);
 	while (len-- >= 0)
 	{
 		if (*str2 == c)
-			return ((void *)str2);
+			return (str2);
 		str2--;
 	}
 	return (0);
