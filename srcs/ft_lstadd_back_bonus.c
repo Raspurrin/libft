@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:11:00 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:40:20 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:49:55 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back_bonus(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 

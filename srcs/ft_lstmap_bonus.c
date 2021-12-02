@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:12:04 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:40:07 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:50:30 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list			*tmp;
 	struct s_list	*lst2;
