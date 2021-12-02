@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:13:58 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 15:28:39 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 20:59:32 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_int32	ft_memcmp(const void *ptr1, const void *ptr2, t_size n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (((uint8_t *)ptr1)[i] == ((uint8_t *)ptr2)[i] && i < n - 1)
+	while (((t_uint8 *)ptr1)[i] == ((t_uint8 *)ptr2)[i] && i < n - 1)
 		i++;
-	return (((uint8_t *)ptr1)[i] - ((uint8_t *)ptr2)[i]);
+	return (((t_uint8 *)ptr1)[i] - ((t_uint8 *)ptr2)[i]);
 }
