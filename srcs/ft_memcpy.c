@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:08 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 00:47:42 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 22:31:00 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, t_size n)
 	i = 0;
 	while (i < n && dst != src)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
+		((t_uint8 *)dst)[i] = ((t_uint8 *)src)[i];
 		i++;
 	}
 	return (dst);
