@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:12:04 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/01 17:08:33 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 23:40:07 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (tmp != 0)
 	{
 		if (!(f(tmp->content)))
-			ft_lstdelone(tmp->content, del);
+			ft_lstdelone_bonus(tmp->content, del);
 		lst2->content = f(tmp->content);
 		lst2 = lst2->next;
 		tmp = tmp->next;

@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2021/12/02 00:50:39 by mialbert         ###   ########.fr        #
+#    Updated: 2021/12/02 23:39:37 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,15 +54,15 @@ SRCS = 			ft_memmove.c \
 				ft_abs.c \
 				ft_split.c \
 				ft_strlen.c
-BONUS_SRCS := 	ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstnew.c \
-				ft_lstsize.c \
-				ft_lstadd_front.c \
-				ft_lstmap.c \
-				ft_lstlast.c \
-				ft_lstiter.c
+BONUS_SRCS := 	ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c \
+				ft_lstnew_bonus.c \
+				ft_lstsize_bonus.c \
+				ft_lstadd_front_bonus.c \
+				ft_lstmap_bonus.c \
+				ft_lstlast_bonus.c \
+				ft_lstiter_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS := $(BONUS_SRCS:.c=.o)
