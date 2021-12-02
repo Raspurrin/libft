@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 22:54:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/02 01:05:53 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -396,7 +396,7 @@ t_int32		ft_abs(t_int32 x);
  * @param content The content to create the new element with.
  * @return The new element.
  */
-t_list		*ft_lstnew(void *content);
+t_list		*ft_lstnew_bonus(void *content);
 
 /**
  * Adds the element `new` at the beginning of the list.
@@ -404,21 +404,21 @@ t_list		*ft_lstnew(void *content);
  * @param new The address of a pointer to the element to be added to the list.
  * @return None
  */
-void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstadd_front_bonus(t_list **lst, t_list *new);
 
 /**
  * Counts the number of elements in a list.
  * @param lst The beginning of the list.
  * @return Length of the list.
  */
-int			ft_lstsize(t_list *lst);
+int			ft_lstsize_bonus(t_list *lst);
 
 /**
  * Returns the last element of the list.
  * @param lst The beginning of the list.
  * @return Last element of the list.
  */
-t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstlast_bonus(t_list *lst);
 
 /**
  * Adds the element `new` at the end of the list.
@@ -426,7 +426,7 @@ t_list		*ft_lstlast(t_list *lst);
  * @param new The address of a pointer to the element to be added to the list.
  * @return
  */
-void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstadd_back_bonus(t_list **lst, t_list *new);
 
 /**
  * Takes as a parameter an element and frees the memory 
@@ -437,7 +437,7 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
  * @param del The address of the function used to delete the content.
  * @return None.
  */
-void		ft_lstdelone(t_list *lst, void (*del)(void*));
+void		ft_lstdelone_bonus(t_list *lst, void (*del)(void*));
 
 /**
  * Deletes and frees the given element and every successor 
@@ -448,7 +448,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void*));
  * used to delete the content of the element.
  * @return None
  */
-void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstclear_bonus(t_list **lst, void (*del)(void*));
 
 /**
  * Iterates the list `lst` and applies the function `f` 
@@ -457,7 +457,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
  * @param f The adress of the function used to iterate on the list.
  * @return None.
  */
-void		ft_lstiter(t_list *lst, void (*f)(void *));
+void		ft_lstiter_bonus(t_list *lst, void (*f)(void *));
 
 /**
  * Iterates the list `lst` and applies the function `f` 
@@ -470,6 +470,7 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
  * delete the content of an element if needed.
  * @return The new list. NULL if the allocation fails.
  */
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list		*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), \
+			void (*del)(void *));
 
 #endif
