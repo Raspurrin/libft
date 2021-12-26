@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:11 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 00:48:33 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/05 16:51:49 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*ft_strjoin(char const *str1, char const *str2)
 
 	if (!str1 || !str2)
 		return (0);
-	str1len = ft_strlen((char *)str1);
-	str2len = ft_strlen((char *)str2);
+	str1len = ft_strlen(str1);
+	str2len = ft_strlen(str2);
 	out = ft_calloc((str1len + str2len + 1), sizeof(char));
 	if (!out)
 		return (0);
