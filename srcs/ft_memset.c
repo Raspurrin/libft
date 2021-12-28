@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:21 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 01:28:40 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *src, t_int32 c, t_size n)
+void	*ft_memset(void *src, int32_t c, size_t n)
 {
 	while (n-- > 0)
-		((t_uint8 *)src)[n] = c;
+		((uint8_t *)src)[n] = c;
 	return (src);
 }

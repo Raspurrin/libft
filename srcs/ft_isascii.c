@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:14:14 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 22:50:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:27:21 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isascii(t_int32 c)
+bool	ft_isascii(int32_t c)
 {
 	if (c >= 0 && c <= 127)
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

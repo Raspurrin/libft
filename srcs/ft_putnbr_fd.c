@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:14:47 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 13:39:44 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/28 23:49:55 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(t_int32 nbr, t_int32 fd)
+void	ft_putnbr_fd(int32_t nbr, int32_t fd)
 {
 	char	c;
 

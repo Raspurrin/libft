@@ -6,32 +6,37 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:20 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 22:34:15 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:22:30 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-t_size	ft_strlcat(char *dst, const char *src, t_size size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	t_size	i;
-	t_size	j;
-	t_size	dstlen;
-	t_size	srclen;
+	size_t	i;
+	size_t	j;
+	size_t	dstlen;
+	size_t	srclen;
 
-	i = 0;
 	j = 0;
-	srclen = ft_strlen((char *)src);
+	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
-	if (size == 0)
-		return (srclen);
-	if (size < dstlen)
+	i = dstlen;
+	if (size == 0 || size < dstlen)
 		return (srclen + size);
-	while (dst[i])
-		i++;
-	dstlen = i;
 	while (src[j] && i < size - 1)
 		dst[i++] = src[j++];
 	dst[i] = '\0';
 	return (dstlen + srclen);
 }
+
+// int	main(void)
+// {
+// 	char dst[9] = "moon";
+// 	char	src[] = "basic";
+// 	printf("%ld", ft_strlcat(dst, src, 2));
+// 	printf("%s", dst);
+// 	return (0);
+// }

@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 14:42:43 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 13:41:57 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:31:51 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *str, void (*f)(t_uint32, char*))
+void	ft_striteri(char *str, void (*f)(uint32_t, char*))
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	if (!str)

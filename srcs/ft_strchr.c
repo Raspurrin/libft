@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:18:55 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 19:52:27 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/28 23:49:55 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, t_int32 c)
+char	*ft_strchr(const char *str, int32_t c)
 {
 	char	*str2;
 

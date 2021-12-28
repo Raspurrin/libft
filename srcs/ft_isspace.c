@@ -6,16 +6,16 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:14:52 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:28:03 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isspace(t_int32 c)
+bool	ft_isspace(int32_t c)
 {
 	if (c == ' ' || c == '\n' || c == '\t' || \
 		c == '\v' || c == '\f' || c == '\r')
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

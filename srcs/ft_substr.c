@@ -6,16 +6,16 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:13 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/24 14:19:00 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, t_uint32 start, t_size len)
+char	*ft_substr(char const *str, uint32_t start, size_t len)
 {
 	char	*out;
-	t_size	slen;
+	size_t	slen;
 
 	slen = ft_strlen(str);
 	if (!str)

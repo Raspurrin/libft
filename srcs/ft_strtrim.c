@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:20:07 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/01 12:36:07 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strtrim(char const *str, char const *set)
 {
-	t_size	end;
+	size_t	end;
 
 	if (!str)
 		return (NULL);

@@ -6,17 +6,17 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:47:06 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 01:19:45 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:25:25 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_bool	allocate(char **out, const char *str, char del, \
-				t_size wcount)
+static bool	allocate(char **out, const char *str, char del, \
+				size_t wcount)
 {
-	t_size	count;
-	t_size	index;
+	size_t	count;
+	size_t	index;
 
 	index = 0;
 	while (*str && index < wcount)
@@ -28,18 +28,18 @@ static t_bool	allocate(char **out, const char *str, char del, \
 			count++;
 		out[index] = malloc(sizeof(char) * (count + 1));
 		if (!out[index])
-			return (FALSE);
+			return (false);
 		ft_strlcpy(out[index], str, count + 1);
 		str += count;
 		index++;
 	}
-	return (TRUE);
+	return (true);
 }
 
 char	**ft_split(const char *str, char del)
 {
 	char	**out;
-	t_size	wcount;
+	size_t	wcount;
 
 	if (!str)
 		return (NULL);

@@ -6,13 +6,13 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 00:59:09 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 13:39:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/28 23:49:55 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_int32	ft_abs(t_int32 x)
+int32_t	ft_abs(int32_t x)
 {
 	if (x < 0)
 		return (x *= -1);

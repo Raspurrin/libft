@@ -1,6 +1,6 @@
 #include "../srcs/libft.h"
 
-char	ft_toupper2(t_uint32 i, char c)
+char	ft_toupper2(uint32_t i, char c)
 {
 	i++;
 	if ((c >= 'a' && c <= 'z'))

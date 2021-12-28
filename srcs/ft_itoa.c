@@ -6,16 +6,16 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:10:48 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 22:27:25 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(t_int32 nbr)
+char	*ft_itoa(int32_t nbr)
 {
 	char	*out;
-	t_size	i;
+	size_t	i;
 
 	i = ft_intlen(nbr);
 	if (nbr == -2147483648)

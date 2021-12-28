@@ -6,11 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:34 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 02:02:22 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/27 20:25:46 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+int	gnl_ft_strlen(const char *str)
 {
 	int	i;
 

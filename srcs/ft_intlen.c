@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:13:51 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 22:26:43 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_size	ft_intlen(t_int32 nbr)
+size_t	ft_intlen(int32_t nbr)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	if (nbr == 0)

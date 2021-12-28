@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:40 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 20:22:31 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:32:18 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *str, char (*f)(t_uint32, char))
+char	*ft_strmapi(char const *str, char (*f)(uint32_t, char))
 {
-	t_size	i;
+	size_t	i;
 	char	*out;
 
 	i = 0;

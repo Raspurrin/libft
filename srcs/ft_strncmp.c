@@ -6,21 +6,21 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:46 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/30 17:40:28 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_int32	ft_strncmp(const char *str1, const char *str2, t_size n)
+int32_t	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)
 		return (0);
-	while ((t_uint8)str1[i] && (t_uint8)str2[i] && \
-			(t_uint8)str1[i] == (t_uint8)str2[i] && i < n - 1)
+	while ((uint8_t)str1[i] && (uint8_t)str2[i] && \
+			(uint8_t)str1[i] == (uint8_t)str2[i] && i < n - 1)
 		i++;
-	return ((t_uint8)str1[i] - (t_uint8)str2[i]);
+	return ((uint8_t)str1[i] - (uint8_t)str2[i]);
 }

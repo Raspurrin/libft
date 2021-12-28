@@ -6,15 +6,15 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 20:14:29 by mialbert          #+#    #+#             */
-/*   Updated: 2021/11/25 12:36:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:27:11 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isprint(t_int32 c)
+bool	ft_isprint(int32_t c)
 {
 	if (c >= 32 && c <= 126)
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

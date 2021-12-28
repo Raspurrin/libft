@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 20:02:42 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:09:33 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,8 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-
-# define FALSE 0
-# define TRUE 1
-
-typedef int						t_bool;
-typedef unsigned char			t_uint8;
-typedef unsigned int			t_uint32;
-typedef signed int				t_int32;
-typedef size_t					t_size;
-typedef unsigned long long		t_uint64;
-typedef signed long long		t_int64;
+# include <stdint.h>
+# include <stdbool.h>
 
 /**
  * @param content : The data contained in the element. 
@@ -42,49 +33,49 @@ typedef struct s_list
  * @param c The character.
  * @return Whether c is a space.
  */
-t_bool		ft_isspace(t_int32 c);
+bool		ft_isspace(int32_t c);
 
 /**
  * Checks if c is an alphabetical character.
  * @param c The character.
  * @return Whether c is an alphabetical character.
  */
-t_bool		ft_isalpha(t_int32 c);
+bool		ft_isalpha(int32_t c);
 
 /**
  * Checks if c is a number.
  * @param c The character.
  * @return Whether c is a number.
  */
-t_bool		ft_isdigit(t_int32 c);
+bool		ft_isdigit(int32_t c);
 
 /**
  * Checks if c is a alpha numeric character (alphabetic or number)
  * @param c The character.
  * @return Whether c is a alphanumeric character.
  */
-t_bool		ft_isalnum(t_int32 c);
+bool		ft_isalnum(int32_t c);
 
 /**
  * Checks if c is an ASCII character.
  * @param c The character.
  * @return Whether c is an ASCII character.
  */
-t_bool		ft_isascii(t_int32 c);
+bool		ft_isascii(int32_t c);
 
 /**
  * Checks if c is a printable character.
  * @param c The character.
  * @return Whether c is a a printable character.
  */
-t_bool		ft_isprint(t_int32 c);
+bool		ft_isprint(int32_t c);
 
 /** 
  * Checks the length of str.
  * @param str A string.
  * @return The length of the string.
  */
-t_size		ft_strlen(const char *str);
+size_t		ft_strlen(const char *str);
 
 /** 
  * Fills src up to n with c.
@@ -93,7 +84,7 @@ t_size		ft_strlen(const char *str);
  * @param n The amount of bytes the memory is filled with c.
  * @return A pointer to the memory area of src.
  */
-void		*ft_memset(void *src, t_int32 c, t_size n);
+void		*ft_memset(void *src, int32_t c, size_t n);
 
 /** 
  * Fills src up to n with null terminators.
@@ -101,7 +92,7 @@ void		*ft_memset(void *src, t_int32 c, t_size n);
  * @param n The amount of bytes the memory is filled with null terminators.
  * @return A pointer to the memory area of src.
  */
-void		ft_bzero(void *src, t_size n);
+void		ft_bzero(void *src, size_t n);
 
 /**
  * Copies n bytes from memory area src to memory area dest. 
@@ -111,7 +102,7 @@ void		ft_bzero(void *src, t_size n);
  * @param n The amount of bytes copied from src to dest.
  * @return A pointer to the memory area of dest.
  */
-void		*ft_memcpy(void *dst, const void *src, t_size n);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
 
 /**
  * Copies n bytes from memory area src to memory area dest. 
@@ -121,7 +112,7 @@ void		*ft_memcpy(void *dst, const void *src, t_size n);
  * @param n The amount of bytes copied from src to dest.
  * @return A pointer to the memory area of dest.
  */
-void		*ft_memmove(void *dst, const void *src, t_size n);
+void		*ft_memmove(void *dst, const void *src, size_t n);
 
 /**
  * Copies up to size - 1 characters from the NUL-terminated 
@@ -134,7 +125,7 @@ void		*ft_memmove(void *dst, const void *src, t_size n);
  * @return The total length of the string it tried to create: 
  * the initial length of dst plus the length of src.
  */
-t_size		ft_strlcpy(char *dst, const char *src, t_size size);
+size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 
 /**
  * Appends the NUL-terminated string src to the end of dst. 
@@ -145,21 +136,21 @@ t_size		ft_strlcpy(char *dst, const char *src, t_size size);
  * @param size How many characters are to be appended to dest.
  * @return The total length of the string it tried to create: the length of src.
  */
-t_size		ft_strlcat(char *dst, const char *src, t_size size);
+size_t		ft_strlcat(char *dst, const char *src, size_t size);
 
 /**
  * Converts lowercase letters to uppercase.
  * @param c Letter to be converted if it is lowercase.
  * @return An uppercase letter.
  */
-t_int32		ft_toupper(t_int32 c);
+int32_t		ft_toupper(int32_t c);
 
 /**
  * Converts uppercase letters to lowercase.
  * @param c Letter to be converted if it is uppercase.
  * @return A lowercase letter.
  */
-t_int32		ft_tolower(t_int32 c);
+int32_t		ft_tolower(int32_t c);
 
 /**
  * Returns a pointer to the first occurance of c in str.
@@ -167,7 +158,7 @@ t_int32		ft_tolower(t_int32 c);
  * @param c Character to be searched for in the string.
  * @return A pointer to the first occurance of c in str.
  */
-char		*ft_strchr(const char *str, t_int32 c);
+char		*ft_strchr(const char *str, int32_t c);
 
 /**
  * Returns a pointer to the last occurance of c in str.
@@ -175,7 +166,7 @@ char		*ft_strchr(const char *str, t_int32 c);
  * @param c Character to be searched for in the string.
  * @return A pointer to the last occurance of c in str.
  */
-char		*ft_strrchr(const char *str, t_int32 c);
+char		*ft_strrchr(const char *str, int32_t c);
 
 /**
  * Compares str1 and str2 up to n bytes.
@@ -185,7 +176,7 @@ char		*ft_strrchr(const char *str, t_int32 c);
  * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 
  * 0 if they are equal.
  */
-t_int32		ft_strncmp(const char *str1, const char *str2, t_size n);
+int32_t		ft_strncmp(const char *str1, const char *str2, size_t n);
 
 /**
  * Searches for the first occurance of c in ptr up to n. 
@@ -197,7 +188,7 @@ t_int32		ft_strncmp(const char *str1, const char *str2, t_size n);
  * @return A pointer to the first occurance of c in str 
  * or NULL if t he character does not occur.
  */
-void		*ft_memchr(const void *ptr, t_int32 c, t_size n);
+void		*ft_memchr(const void *ptr, int32_t c, size_t n);
 
 /**
  * Compares str1 and str2 up to n bytes. It differs from strcmp 
@@ -209,7 +200,7 @@ void		*ft_memchr(const void *ptr, t_int32 c, t_size n);
  * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 
  * 0 if they are equal.
  */
-t_int32		ft_memcmp(const void *ptr1, const void *ptr2, t_size n);
+int32_t		ft_memcmp(const void *ptr1, const void *ptr2, size_t n);
 
 /**
  * Checks if the entirity of the needle occurs in the haystack up to n bytes.
@@ -220,14 +211,14 @@ t_int32		ft_memcmp(const void *ptr1, const void *ptr2, t_size n);
  * of needle in the haystack. NULL if haystack doesn't occur anywhere. 
  * Haystack if needle is empty.
  */
-char		*ft_strnstr(const char *haystack, const char *needle, t_size n);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
 
 /**
  * Converts a string to integers.
  * @param str The string to be converted.
  * @return The converted value or 0 on error.
  */
-t_int32		ft_atoi(const char *str);
+int32_t		ft_atoi(const char *str);
 
 /**
  * Allocates memory for an array of num objects of size and 
@@ -238,7 +229,7 @@ t_int32		ft_atoi(const char *str);
  * allocated byte that is suitably aligned for any object type. 
  * On failure, returns a null pointer.
  */
-void		*ft_calloc(t_size num, t_size size);
+void		*ft_calloc(size_t num, size_t size);
 
 /**
  * Copies str to a new memory location and returns a pointer to that string.
@@ -255,7 +246,7 @@ char		*ft_strdup(const char *str);
  * @param len The maximum length of the substring.
  * @return The substring. NULL if the allocation fails.
  */
-char		*ft_substr(char const *str, t_uint32 start, t_size len);
+char		*ft_substr(char const *str, uint32_t start, size_t len);
 
 /**
  * Allocates (with malloc(3)) and returns a new string, 
@@ -293,7 +284,7 @@ char		**ft_split(char const *str, char del);
  * @param n the integer to convert.
  * @return The string representing the integer. NULL if the allocation fails.
  */
-char		*ft_itoa(t_int32 n);
+char		*ft_itoa(int32_t n);
 
 /**
  * Applies the function `f` to each character of the string `s` 
@@ -304,7 +295,7 @@ char		*ft_itoa(t_int32 n);
  * @return The string created from the successive applications 
  * of `f`. Returns NULL if the allocation fails.
  */
-char		*ft_strmapi(char const *str, char (*f)(t_uint32, char));
+char		*ft_strmapi(char const *str, char (*f)(uint32_t, char));
 
 /**
  * Applies the function f to each character of the string 
@@ -314,7 +305,7 @@ char		*ft_strmapi(char const *str, char (*f)(t_uint32, char));
  * @param f The function to apply to each character.
  * @return None.
  */
-void		ft_striteri(char *str, void (*f)(t_uint32, char*));
+void		ft_striteri(char *str, void (*f)(uint32_t, char*));
 
 /**
  * Outputs the character `c` to the given file descriptor.
@@ -322,7 +313,7 @@ void		ft_striteri(char *str, void (*f)(t_uint32, char*));
  * @param f The file descriptor on which to write.
  * @return None.
  */
-void		ft_putchar_fd(char c, t_int32 fd);
+void		ft_putchar_fd(char c, int32_t fd);
 
 /**
  * Outputs the string `s` to the given file descriptor.
@@ -330,7 +321,7 @@ void		ft_putchar_fd(char c, t_int32 fd);
  * @param fd The file descriptor on which to write.
  * @return None.
  */
-void		ft_putstr_fd(char *str, t_int32 fd);
+void		ft_putstr_fd(char *str, int32_t fd);
 
 /**
  * Outputs the string `s` to the given file descriptor, followed by a newline.
@@ -338,7 +329,7 @@ void		ft_putstr_fd(char *str, t_int32 fd);
  * @param fd The file descriptor on which to write.
  * @return None.
  */
-void		ft_putendl_fd(char *str, t_int32 fd);
+void		ft_putendl_fd(char *str, int32_t fd);
 
 /**
  * Outputs the integer `n` to the given file descriptor.
@@ -346,7 +337,7 @@ void		ft_putendl_fd(char *str, t_int32 fd);
  * @param fd The file descriptor on which to write.
  * @return None.
  */
-void		ft_putnbr_fd(t_int32 nbr, t_int32 fd);
+void		ft_putnbr_fd(int32_t nbr, int32_t fd);
 
 /**
  * Counts the words in a string
@@ -354,14 +345,14 @@ void		ft_putnbr_fd(t_int32 nbr, t_int32 fd);
  * @param del 
  * @return 
  */
-t_size		ft_wcount(const char *str, char del);
+size_t		ft_wcount(const char *str, char del);
 
 /**
  * Counts the length of an integer
  * @param nbr
  * @return 
  */
-t_size		ft_intlen(t_int32 nbr);
+size_t		ft_intlen(int32_t nbr);
 
 /**
  * calculates the power of a number
@@ -369,7 +360,7 @@ t_size		ft_intlen(t_int32 nbr);
  * @param power
  * @return 
  */
-t_size		ft_pow(t_int64 base, t_int32 power);
+size_t		ft_pow(int64_t base, int32_t power);
 
 /**
  * Resizes memory that has been allocated through malloc or calloc.
@@ -377,14 +368,14 @@ t_size		ft_pow(t_int64 base, t_int32 power);
  * @param size
  * @return 
  */
-void		*ft_realloc(void *ptr, t_size size);
+void		*ft_realloc(void *ptr, size_t size);
 
 /**
  * Returns absolute value of x
  * @param x
  * @return absolute value of x
  */
-t_int32		ft_abs(t_int32 x);
+int32_t		ft_abs(int32_t x);
 
 // Bonus content:
 /**
@@ -394,7 +385,7 @@ t_int32		ft_abs(t_int32 x);
  * @param content The content to create the new element with.
  * @return The new element.
  */
-t_list		*ft_lstnew_bonus(void *content);
+t_list		*ft_lstnew(void *content);
 
 /**
  * Adds the element `new` at the beginning of the list.
@@ -402,21 +393,21 @@ t_list		*ft_lstnew_bonus(void *content);
  * @param new The address of a pointer to the element to be added to the list.
  * @return None
  */
-void		ft_lstadd_front_bonus(t_list **lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new);
 
 /**
  * Counts the number of elements in a list.
  * @param lst The beginning of the list.
  * @return Length of the list.
  */
-int			ft_lstsize_bonus(t_list *lst);
+int			ft_lstsize(t_list *lst);
 
 /**
  * Returns the last element of the list.
  * @param lst The beginning of the list.
  * @return Last element of the list.
  */
-t_list		*ft_lstlast_bonus(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
 
 /**
  * Adds the element `new` at the end of the list.
@@ -424,7 +415,7 @@ t_list		*ft_lstlast_bonus(t_list *lst);
  * @param new The address of a pointer to the element to be added to the list.
  * @return
  */
-void		ft_lstadd_back_bonus(t_list **lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
  * Takes as a parameter an element and frees the memory 
@@ -435,7 +426,7 @@ void		ft_lstadd_back_bonus(t_list **lst, t_list *new);
  * @param del The address of the function used to delete the content.
  * @return None.
  */
-void		ft_lstdelone_bonus(t_list *lst, void (*del)(void*));
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
 
 /**
  * Deletes and frees the given element and every successor 
@@ -446,7 +437,7 @@ void		ft_lstdelone_bonus(t_list *lst, void (*del)(void*));
  * used to delete the content of the element.
  * @return None
  */
-void		ft_lstclear_bonus(t_list **lst, void (*del)(void*));
+void		ft_lstclear(t_list **lst, void (*del)(void*));
 
 /**
  * Iterates the list `lst` and applies the function `f` 
@@ -455,7 +446,7 @@ void		ft_lstclear_bonus(t_list **lst, void (*del)(void*));
  * @param f The adress of the function used to iterate on the list.
  * @return None.
  */
-void		ft_lstiter_bonus(t_list *lst, void (*f)(void *));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**
  * Iterates the list `lst` and applies the function `f` 
@@ -468,7 +459,7 @@ void		ft_lstiter_bonus(t_list *lst, void (*f)(void *));
  * delete the content of an element if needed.
  * @return The new list. NULL if the allocation fails.
  */
-t_list		*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), \
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), \
 			void (*del)(void *));
 
 #endif

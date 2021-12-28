@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:11 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/05 16:51:49 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 00:03:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *str1, char const *str2)
 {
-	t_size	str1len;
-	t_size	str2len;
+	size_t	str1len;
+	size_t	str2len;
 	char	*out;
 
 	if (!str1 || !str2)

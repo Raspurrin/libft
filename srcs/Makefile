@@ -6,12 +6,11 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2021/12/02 23:39:37 by mialbert         ###   ########.fr        #
+#    Updated: 2021/12/26 21:24:52 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-HEADER = libft.h
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
 SRCS = 			ft_memmove.c \
@@ -54,20 +53,23 @@ SRCS = 			ft_memmove.c \
 				ft_abs.c \
 				ft_split.c \
 				ft_strlen.c
-BONUS_SRCS := 	ft_lstadd_back_bonus.c \
-				ft_lstdelone_bonus.c \
-				ft_lstclear_bonus.c \
-				ft_lstnew_bonus.c \
-				ft_lstsize_bonus.c \
-				ft_lstadd_front_bonus.c \
-				ft_lstmap_bonus.c \
-				ft_lstlast_bonus.c \
-				ft_lstiter_bonus.c
+BONUS_SRCS = 	ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstnew.c \
+				ft_lstsize.c \
+				ft_lstadd_front.c \
+				ft_lstmap.c \
+				ft_lstlast.c \
+				ft_lstiter.c
 
 OBJS = $(SRCS:.c=.o)
-BONUS_OBJS := $(BONUS_SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
@@ -76,10 +78,10 @@ bonus : $(BONUS_OBJS) $(OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	@rm -f $(OBJS) $(TOBJS) $(BONUS_OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	@rm -f $(NAME) $(TNAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
@@ -87,4 +89,4 @@ re: fclean all
 # 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 # 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
