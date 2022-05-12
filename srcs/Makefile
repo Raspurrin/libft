@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
+#    By: mialbert <mialbert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2021/12/26 21:24:52 by mialbert         ###   ########.fr        #
+#    Updated: 2022/05/12 22:57:26 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,9 @@ SRCS = 			ft_memmove.c \
 				ft_strlcpy.c \
 				ft_abs.c \
 				ft_split.c \
-				ft_strlen.c
+				ft_strlen.c \
+				get_next_line_utils.c \
+				get_next_line.c
 BONUS_SRCS = 	ft_lstadd_back.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \
