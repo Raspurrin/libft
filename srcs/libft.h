@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/05/12 23:13:07 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/05/20 04:21:57 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -464,7 +464,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), \
 			void (*del)(void *));
 
 char		*gnl_substr(char *str, uint32_t start, size_t len);
-char			*gnl_strjoin(char *str1, char *str2);
+char		*gnl_strjoin(char *str1, char *str2);
 char		*gnl_strchr(const char *str, int32_t c);
 char		*gnl_strdup(char *str);
 size_t		gnl_strlcpy(char *dst, char *src, size_t size);

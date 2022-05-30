@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mialbert <mialbert@student.42.fr>          +#+  +:+       +#+         #
+#    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/05/12 22:57:26 by mialbert         ###   ########.fr        #
+#    Updated: 2022/05/28 07:23:56 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,24 +65,33 @@ BONUS_SRCS = 	ft_lstadd_back.c \
 				ft_lstlast.c \
 				ft_lstiter.c
 
+B_RED	:= \033[1;31m
+GREEN	:= \033[32;1m
+RED 	:= \033[0;31m
+NC 		:= \033[0m
+
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(GREEN)Compiling: $(notdir $<)"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "Done"
 
 bonus : $(BONUS_OBJS) $(OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
+	@echo "$(B_RED)Cleaning: $(RED)" $(OBJS)
 	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
+	@echo "$(B_RED)Cleaning: $(RED)" $(NAME)
 	@rm -f $(NAME)
 
 re: fclean all
