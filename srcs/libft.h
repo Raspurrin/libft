@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mialbert <mialbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/05/20 04:21:57 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/13 14:30:12 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,6 +220,13 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
  * @return The converted value or 0 on error.
  */
 int32_t		ft_atoi(const char *str);
+
+/**
+ * Converts a string to integers in 64 bit format.
+ * @param str The string to be converted.
+ * @return The converted value in 64 bits or 0 on error.
+ */
+int64_t	ft_atoll(const char *str);
 
 /**
  * Allocates memory for an array of num objects of size and 
