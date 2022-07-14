@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/13 14:30:12 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/14 22:09:05 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,14 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdbool.h>
+# include <stdarg.h>
 # define BUFFER_SIZE 50
+
+# if defined(__linux__)
+#  define NULL_OUTPUT "(nil)"
+# elif defined(__APPLE__)
+#  define NULL_OUTPUT "0x0" 
+# endif
 
 /**
  * @param content : The data contained in the element. 
@@ -319,17 +326,17 @@ void		ft_striteri(char *str, void (*f)(uint32_t, char*));
  * Outputs the character `c` to the given file descriptor.
  * @param str The character to output.
  * @param f The file descriptor on which to write.
- * @return None.
+ * @return How much it has written. *(custom libft)
  */
-void		ft_putchar_fd(char c, int32_t fd);
+int32_t		ft_putchar_fd(char c, int32_t fd);
 
 /**
  * Outputs the string `s` to the given file descriptor.
  * @param str The string to output.
  * @param fd The file descriptor on which to write.
- * @return None.
+ * @return How much it has written. *(custom libft)
  */
-void		ft_putstr_fd(char *str, int32_t fd);
+int32_t		ft_putstr_fd(char *str, int32_t fd);
 
 /**
  * Outputs the string `s` to the given file descriptor, followed by a newline.
@@ -343,15 +350,59 @@ void		ft_putendl_fd(char *str, int32_t fd);
  * Outputs the integer `n` to the given file descriptor.
  * @param nbr The integer to output.
  * @param fd The file descriptor on which to write.
- * @return None.
+ * @return How much it has written *(custom libft)
  */
-void		ft_putnbr_fd(int32_t nbr, int32_t fd);
+int32_t		ft_putnbr_fd(int32_t nbr, int32_t fd);
+
+/**
+ * Outputs the integer `n` to the given file descriptor.
+ * @param nbr The integer to output, only acceptes unsigned integers.
+ * @param fd The file descriptor on which to write.
+ * @return How much it has written *(custom libft)
+ */
+int32_t		ft_uputnbr_fd(uint32_t nbr, int32_t fd);
+
+/**
+ * Converts the given integer to hex (lowercase) and outputs it to the 
+ * given file descriptor. 
+ * @param nbr The integer to be converted to hex and outputted
+ * @param fd The file descriptor on which to write.
+ * @return How much it has written *(custom libft)
+ */
+int32_t		ft_hex_fd(uint64_t nbr, int32_t fd);
+
+/**
+ * Converts the given integer to hex (capital) and outputs it to the 
+ * given file descriptor. 
+ * @param nbr The integer to be converted to hex and outputted
+ * @param fd The file descriptor on which to write.
+ * @return How much it has written *(custom libft)
+ */
+int32_t		ft_uphex_fd(uint32_t nbr, int32_t fd);
+
+/**
+ * Will output the address of a pointer in hexidecimal
+ * @param ptr The pointer which adress will be outputted
+ * @return How much it has written *(custom libft)
+ */
+int32_t		ft_putmem_fd(size_t *ptr, int32_t fd);
+
+/**
+ * Replicates the behaviour of printf, but you can choose the file descriptor.
+ * @param fd The file descriptor on which to write.
+ * @param str The string to be outputted with % followed by a type descriptor 
+ * whenever a variable has to be printed. (ex: "Hiello %s", where %s is a string)
+ * cases: %c %s %% %i %d %u %p %x %X
+ * @param ... Can receive an unfixed amount of variables.
+ * @return int32_t 
+ */
+int32_t		ft_printf_fd(int32_t fd, const char *str, ...);
 
 /**
  * Counts the words in a string
- * @param str 
- * @param del 
- * @return 
+ * @param str The string
+ * @param del The delimiter seperating what will be counted
+ * @return The amount of "words" in a string
  */
 size_t		ft_wcount(const char *str, char del);
 
@@ -469,7 +520,27 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
  */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), \
 			void (*del)(void *));
+/**
+ * Prints a 2d array.
+ * @param arr 2D array to be printed.
+ */
+void		print_2d_arr(char **arr);
 
+/**
+ * @brief Frees a 2D array and guards against multiple frees of the same
+ * 2D arrays by initialising the address to NULL, so the if condition
+ * won't be true.
+ * @param arr Pass the address of your 2D array here. It's a 3D array, 
+ * so it can change the address the 2D array is pointing to and retain 
+ * that value outside of the scope of this function.
+ */
+void		free_2d_guard(char ***arr);
+
+/**
+ * Frees a 2D array.
+ * @param arr The 2D array to be freed
+ */
+void		free_2d(char **arr);
 char		*gnl_substr(char *str, uint32_t start, size_t len);
 char		*gnl_strjoin(char *str1, char *str2);
 char		*gnl_strchr(const char *str, int32_t c);

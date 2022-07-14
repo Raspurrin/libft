@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/13 14:29:45 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/14 22:12:32 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,16 @@ SRCS = 			ft_memmove.c \
 				ft_strlen.c \
 				get_next_line_utils.c \
 				get_next_line.c \
-				ft_atoll.c
+				ft_atoll.c \
+				print_2d_arr.c \
+				free_2d_guard.c \
+				free_2d.c \
+				ft_hex_fd.c \
+				ft_uphex_fd.c \
+				ft_uputnbr_fd.c \
+				ft_putmem_fd.c \
+				ft_printf.c
+
 BONUS_SRCS = 	ft_lstadd_back.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \

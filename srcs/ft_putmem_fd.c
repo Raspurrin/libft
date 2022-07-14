@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putmem_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:17:25 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:13:04 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/14 18:59:03 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/14 22:13:38 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int32_t	ft_putstr_fd(char *str, int32_t fd)
+int32_t	ft_putmem_fd(size_t *ptr, int32_t fd)
 {
-	if (!str)
-		return (ft_putstr_fd("(null)", fd));
-	return (write(fd, str, ft_strlen(str)));
+	if (!ptr)
+		return (ft_putstr_fd(NULL_OUTPUT, fd));
+	return (ft_putstr_fd("0x", fd) + ft_hex_fd((uint64_t)ptr, fd));
 }

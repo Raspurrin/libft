@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   print_2d_arr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:17:25 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:13:04 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/14 15:34:58 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/14 21:56:34 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int32_t	ft_putstr_fd(char *str, int32_t fd)
+void	print_2d_arr(char **arr)
 {
-	if (!str)
-		return (ft_putstr_fd("(null)", fd));
-	return (write(fd, str, ft_strlen(str)));
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+		ft_printf_fd(STDOUT_FILENO, "%s\n", arr[i++]);
 }

@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_hex_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:17:25 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:13:04 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/14 19:11:08 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/14 22:04:54 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int32_t	ft_putstr_fd(char *str, int32_t fd)
+int32_t	ft_hex_fd(uint64_t nbr, int32_t fd)
 {
-	if (!str)
-		return (ft_putstr_fd("(null)", fd));
-	return (write(fd, str, ft_strlen(str)));
+	int32_t		i;
+	const char	hexbase[] = "0123456789abcdef";
+
+	i = 0;
+	if (nbr == 0)
+		i += ft_putchar_fd('0', fd);
+	if (nbr >= 16)
+	{
+		i += ft_hex_fd(nbr / 16, fd);
+		i += ft_hex_fd(nbr % 16, fd);
+	}
+	if (nbr < 16 && nbr != 0)
+		i += ft_putchar_fd(hexbase[nbr], fd);
+	return (i);
 }

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_uphex_fd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:17:25 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:13:04 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/14 19:19:41 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/14 22:06:08 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int32_t	ft_putstr_fd(char *str, int32_t fd)
+int32_t	ft_uphex_fd(uint32_t nbr, int32_t fd)
 {
-	if (!str)
-		return (ft_putstr_fd("(null)", fd));
-	return (write(fd, str, ft_strlen(str)));
+	int32_t		i;
+	const char	hexbase[] = "0123456789ABCDEF";
+
+	i = 0;
+	if (nbr >= 16)
+	{
+		i += ft_uphex_fd(nbr / 16, fd);
+		i += ft_uphex_fd(nbr % 16, fd);
+	}
+	if (nbr < 16)
+		i += ft_putchar_fd(hexbase[nbr], fd);
+	return (i);
 }
