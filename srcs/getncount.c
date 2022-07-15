@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_2d_guard.c                                    :+:      :+:    :+:   */
+/*   getncount.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:49:55 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 18:21:38 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/15 19:41:06 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/15 19:42:58 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_2d_guard(char ***arr)
+size_t	getncount(char *str, uint8_t n)
 {
-	size_t	i;
+	size_t	count;
 
-	i = 0;
-	if (*arr)
+	count = 0;
+	while (*str)
 	{
-		while ((*arr)[i])
-		{
-			free((*arr)[i]);
-			(*arr)[i++] = NULL;
-		}
-		free(*arr);
-		*arr = NULL;
+		if (*str == n)
+			count++;
+		str++;
 	}
+	return (count);
 }

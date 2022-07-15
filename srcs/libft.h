@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 03:12:48 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/15 19:44:14 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -542,6 +542,15 @@ void		free_2d_guard(char ***arr);
  * @param arr The 2D array to be freed
  */
 void		free_2d(char **arr);
+
+/**
+ * Gets the count of n in a string.
+ * @param str The string.
+ * @param n The thing to be counted in uint8_t format.
+ * @return Count of n.
+ */
+size_t		getncount(char *str, uint8_t n);
+
 char		*gnl_substr(char *str, uint32_t start, size_t len);
 char		*gnl_strjoin(char *str1, char *str2);
 char		*gnl_strchr(const char *str, int32_t c);

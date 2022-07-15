@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/15 17:33:05 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/15 19:45:32 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,8 @@ SRCS = 			ft_memmove.c \
 				ft_uphex_fd.c \
 				ft_uputnbr_fd.c \
 				ft_putmem_fd.c \
-				ft_printf.c
+				ft_printf.c \
+				getncount.c 
 
 BONUS_SRCS = 	ft_lstadd_back.c \
 				ft_lstdelone.c \
