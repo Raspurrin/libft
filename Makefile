@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/15 21:28:39 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/15 22:20:30 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,7 @@ bonus : $(BONUS_OBJS) $(OBJS)
 	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(OBJS)
+	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(notdir $(OBJS))
 	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
