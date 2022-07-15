@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                     				:+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:12:04 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:50:30 by mialbert         ###   ########.fr       */
+/*   Created: 2021/11/15 21:11:07 by mialbert          #+#    #+#             */
+/*   Updated: 2021/12/26 19:41:41 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list			*tmp;
-	struct s_list	*lst2;
-
-	lst2 = malloc(sizeof(t_list));
-	if (!lst2)
-		return (NULL);
-	tmp = lst;
-	while (tmp != 0)
-	{
-		if (!(f(tmp->content)))
-			ft_lstdelone(tmp->content, del);
-		lst2->content = f(tmp->content);
-		lst2 = lst2->next;
-		tmp = tmp->next;
-	}
-	return (lst2);
+	if (!lst)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

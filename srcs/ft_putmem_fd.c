@@ -6,11 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 18:59:03 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:13:38 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int32_t	ft_putmem_fd(size_t *ptr, int32_t fd)
 {

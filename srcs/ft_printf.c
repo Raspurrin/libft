@@ -6,11 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 16:06:02 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:15:19 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static	int32_t	ft_cases(const char chr, va_list argp, \
 								int32_t count, int32_t fd)

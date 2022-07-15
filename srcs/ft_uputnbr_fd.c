@@ -6,11 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 19:32:55 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 00:07:39 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int32_t	ft_uputnbr_fd(uint32_t nbr, int32_t fd)
 {

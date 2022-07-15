@@ -6,11 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 20:47:06 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/29 00:25:25 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 static bool	allocate(char **out, const char *str, char del, \
 				size_t wcount)

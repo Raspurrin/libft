@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 20:18:32 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:50:19 by mialbert         ###   ########.fr       */
+/*   Created: 2021/11/15 21:12:04 by mialbert          #+#    #+#             */
+/*   Updated: 2021/12/02 23:50:30 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !f)
-		return ;
-	while (lst != NULL)
+	t_list			*tmp;
+	struct s_list	*lst2;
+
+	lst2 = malloc(sizeof(t_list));
+	if (!lst2)
+		return (NULL);
+	tmp = lst;
+	while (tmp != 0)
 	{
-		(*f)(lst->content);
-		lst = lst->next;
+		if (!(f(tmp->content)))
+			ft_lstdelone(tmp->content, del);
+		lst2->content = f(tmp->content);
+		lst2 = lst2->next;
+		tmp = tmp->next;
 	}
+	return (lst2);
 }
