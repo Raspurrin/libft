@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/15 20:41:10 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/15 21:28:39 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 all: $(NAME)
 
 %.o: %.c
-	@echo "$(B_GREEN)Compiling: $(GREEN)$(notdir $<)$(NC)"
+	@echo "$(B_GREEN)Compiling: $(GREEN)$(notdir $<) 🔨$(NC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
@@ -99,11 +99,11 @@ bonus : $(BONUS_OBJS) $(OBJS)
 	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	@echo "$(B_RED)Cleaning: $(RED)" $(OBJS)
+	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(OBJS)
 	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	@echo "$(B_RED)Cleaning: $(RED)" $(NAME)
+	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(NAME)
 	@rm -f $(NAME)
 
 re: fclean all
