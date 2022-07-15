@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/15 19:58:34 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/15 20:41:10 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,8 +77,9 @@ BONUS_SRCS = 	./bonus/ft_lstadd_back.c \
 				./bonus/ft_lstiter.c
 
 B_RED	:= \033[1;31m
-GREEN	:= \033[32;1m
 RED 	:= \033[0;31m
+B_GREEN	:= \033[1;32m
+GREEN	:= \033[0;32m
 NC 		:= \033[0m
 
 OBJS = $(SRCS:.c=.o)
@@ -87,7 +88,7 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 all: $(NAME)
 
 %.o: %.c
-	@echo "$(GREEN)Compiling: $(notdir $<)"
+	@echo "$(B_GREEN)Compiling: $(GREEN)$(notdir $<)$(NC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
