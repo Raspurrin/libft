@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/14 22:09:05 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/15 03:12:48 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -520,11 +520,12 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
  */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), \
 			void (*del)(void *));
+
 /**
  * Prints a 2d array.
  * @param arr 2D array to be printed.
  */
-void		print_2d_arr(char **arr);
+void		print_2d_fd(char **arr, int32_t fd);
 
 /**
  * @brief Frees a 2D array and guards against multiple frees of the same
