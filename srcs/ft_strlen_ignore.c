@@ -6,23 +6,23 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 21:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/17 21:08:43 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/17 21:14:34 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_strlen_ignore(const char *str, char ignore)
 {
 	int32_t	i;
-	int32_t	ignore;
+	int32_t	minus;
 
 	i = 0;
-	ignore = 0;
+	minus = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i++] == ignore)
-			ignore++;
+			minus++;
 	}
-	return (i - ignore);
+	return (i - minus);
 }

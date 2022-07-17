@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/15 22:20:30 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/17 21:12:26 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,8 @@ SRCS = 			./srcs/ft_memmove.c \
 				./srcs/ft_uputnbr_fd.c \
 				./srcs/ft_putmem_fd.c \
 				./srcs/ft_printf.c \
-				./srcs/getncount.c 
+				./srcs/getncount.c \
+				./srcs/ft_strlen_ignore.c
 
 BONUS_SRCS = 	./bonus/ft_lstadd_back.c \
 				./bonus/ft_lstdelone.c \

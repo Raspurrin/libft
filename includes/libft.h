@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/17 02:19:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/17 21:12:39 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,14 @@ bool		ft_isprint(int32_t c);
  * @return The length of the string.
  */
 size_t		ft_strlen(const char *str);
+
+/**
+ * Checks the length of str, ignoring a specified character.
+ * @param str A string.
+ * @param ignore The character not to be counted. 
+ * @return The length of the string.
+ */
+int	ft_strlen_ignore(const char *str, char ignore);
 
 /** 
  * Fills src up to n with c.
