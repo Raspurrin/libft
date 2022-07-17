@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 19:44:14 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/17 02:19:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,7 +233,7 @@ int32_t		ft_atoi(const char *str);
  * @param str The string to be converted.
  * @return The converted value in 64 bits or 0 on error.
  */
-int64_t	ft_atoll(const char *str);
+int64_t		ft_atoll(const char *str);
 
 /**
  * Allocates memory for an array of num objects of size and 
