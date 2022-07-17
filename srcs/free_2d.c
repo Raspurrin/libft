@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                 :+:      :+:    :+:   */
+/*   free_2d.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:13:43 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:50:37 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/14 15:54:06 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	free_2d(char **arr)
 {
-	t_list	*counter;
 	size_t	i;
 
-	counter = lst;
 	i = 0;
-	if (!lst)
-		return (0);
-	while (counter != NULL)
+	if (arr)
 	{
-		counter = counter->next;
-		i++;
+		while (arr[i])
+			free(arr[i++]);
+		free(arr);
 	}
-	return (i);
 }

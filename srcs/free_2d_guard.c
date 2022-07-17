@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                               :+:      :+:    :+:   */
+/*   free_2d_guard.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:11:51 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:50:13 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/14 15:49:55 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	free_2d_guard(char ***arr)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	size_t	i;
+
+	i = 0;
+	if (*arr)
+	{
+		while ((*arr)[i])
+		{
+			free((*arr)[i]);
+			(*arr)[i++] = NULL;
+		}
+		free(*arr);
+		*arr = NULL;
+	}
 }

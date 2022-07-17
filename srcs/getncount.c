@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                 :+:      :+:    :+:   */
+/*   getncount.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 20:18:32 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:50:19 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/15 19:41:06 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+size_t	getncount(char *str, uint8_t n)
 {
-	if (!lst || !f)
-		return ;
-	while (lst != NULL)
+	size_t	count;
+
+	count = 0;
+	while (*str)
 	{
-		(*f)(lst->content);
-		lst = lst->next;
+		if (*str == n)
+			count++;
+		str++;
 	}
+	return (count);
 }

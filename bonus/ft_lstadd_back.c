@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 21:14:41 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
+/*   Created: 2021/11/15 21:11:00 by mialbert          #+#    #+#             */
+/*   Updated: 2021/12/02 23:49:55 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	ft_putendl_fd(char *str, int32_t fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_putstr_fd(str, fd);
-	write(fd, "\n", 1);
+	t_list	*tmp;
+
+	if (!lst)
+		return ;
+	tmp = *lst;
+	tmp = ft_lstlast(tmp);
+	tmp = new;
+	tmp->next = NULL;
 }
