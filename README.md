@@ -14,7 +14,7 @@ In this project we learn about many concepts: creating a static library, using a
 ## Function comments
 
 In my [header](https://github.com/Raspurrin/libft/blob/main/includes/libft.h) you can find descriptions of all the functions!
-If you use a doxygen extension in Vscode you can also see these descriptions whenever you mouse over these functions.
+If you use a doxygen extension in Vscode you can also see these descriptions whenever you mouse over these functions. I highly recommend keeping your code well documented, so you can understand your code looking back on it years from now and someone else could potentially as well. 
 
 <img src="https://user-images.githubusercontent.com/13866954/179558332-e459556f-263e-4af2-8714-00739c7a3739.png" height="120"/> <img src="https://user-images.githubusercontent.com/13866954/179558352-512cbaf7-ac23-423e-9999-29131349ae67.png" height="120"/>
 
