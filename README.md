@@ -11,6 +11,8 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 
 ## Header
 
+## Fixed-width integer types
+
 ## Malloc
 
 ## Pointers, char * vs char[]
