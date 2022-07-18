@@ -17,8 +17,6 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 
 ## File descriptor
 
-## Memory functions 
-
 ## str[i] vs *str++
 
 ## allocating a double pointer
