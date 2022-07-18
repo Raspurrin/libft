@@ -27,11 +27,12 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 | strdup | isascii  | bzero | lstadd_back | putnbr_fd | |
 | strlcpy | isprint  | memcpy  | lstlast | itoa | |
 | substr | toupper | memmove |  strlcat | atoi |
-| strjoin |  tolower | calloc |  | strlen| |
+| strjoin |  tolower | calloc |  | | |
 |  strtrim | | |  | | |
 |  strnstr | | |  | | |
 |  strlen | | |  | | |
 |  split | | |  | | |
+|  strlen | | |  | | |
 
 ## Custom functions: 
 Free_2d_guard, free_2d, abs, atoll, intlen, isspace, pow, realloc, strlen_ignore, wcount, getncount, print_2d_fd, I also include my get_next_line and printf in my library now. 
