@@ -7,7 +7,7 @@
 + [Custom functions:](#custom-functions) 
 
 ## The library
-I made my own library in which I recreated functions from the standard C library. This is because we have to make everything from scratch in the school I attend. So in further projects we are allowed to reuse this and potentially other projects, like ft_printf and get_next_line. 
+I made my own library in which I recreated functions from the standard C library. For my school, we have to make everything from scratch, so we can learn from a low level, from the ground up. In further projects we are allowed to reuse this and we can keep adding our own custom functions to it, as well as other projects. 
 
 In this project we learn about many concepts: creating a static library, using a makefile and a header, data type conversion, dynamic memory allocation, pointers vs arrays, memory functions, function pointers, file descriptors, 2D array or an array of strings, typecasting, guards, structs and linked lists.
 
