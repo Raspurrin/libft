@@ -18,8 +18,6 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 
 <img src="https://user-images.githubusercontent.com/13866954/179558332-e459556f-263e-4af2-8714-00739c7a3739.png" height="120"/> <img src="https://user-images.githubusercontent.com/13866954/179558352-512cbaf7-ac23-423e-9999-29131349ae67.png" height="120"/>
 
-
-
 ## Mandatory function from the subject + bonus:
 | String | Ascii check | Memory | Linked list | Data type | Function pointer| 
 | --- | --- | --- | --- | --- | --- | 
