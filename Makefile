@@ -6,13 +6,14 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/17 21:12:26 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/18 04:59:41 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 CC = gcc
+GNL	= ./srcs/get_next_line/
 SRCS = 			./srcs/ft_memmove.c \
 				./srcs/ft_strjoin.c \
 				./srcs/ft_isalnum.c \
@@ -53,8 +54,6 @@ SRCS = 			./srcs/ft_memmove.c \
 				./srcs/ft_abs.c \
 				./srcs/ft_split.c \
 				./srcs/ft_strlen.c \
-				./srcs/get_next_line_utils.c \
-				./srcs/get_next_line.c \
 				./srcs/ft_atoll.c \
 				./srcs/print_2d_fd.c \
 				./srcs/free_2d_guard.c \
@@ -77,20 +76,27 @@ BONUS_SRCS = 	./bonus/ft_lstadd_back.c \
 				./bonus/ft_lstlast.c \
 				./bonus/ft_lstiter.c
 
-B_RED	:= \033[1;31m
-RED 	:= \033[0;31m
-B_GREEN	:= \033[1;32m
-GREEN	:= \033[0;32m
-NC 		:= \033[0m
+NC			:= \033[0m
+B_RED		:= \033[1;31m
+RED 		:= \033[0;31m
+B_GREEN		:= \033[1;32m
+GREEN 		:= \033[0;32m
+B_BLUE 		:= \033[1;34m
+BLUE 		:= \033[0;34m
+PURPLE		:= \033[0;35m
+B_PURPLE	:= \033[1;35m
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-all: $(NAME)
+all: gnl $(NAME)
 
 %.o: %.c
 	@echo "$(B_GREEN)Compiling: $(GREEN)$(notdir $<) 🔨$(NC)"
 	@$(CC) $(CFLAGS) -c $< -o $@
+
+gnl:
+	@$(MAKE) -C $(GNL)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
@@ -102,6 +108,7 @@ bonus : $(BONUS_OBJS) $(OBJS)
 clean:
 	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(notdir $(OBJS))
 	@rm -f $(OBJS) $(BONUS_OBJS)
+	@$(MAKE) -C $(GNL) clean
 
 fclean: clean
 	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(NAME)
