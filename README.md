@@ -26,3 +26,5 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 ## Allocating a double pointer
 
 ## Typecasting 
+
+## Guards
