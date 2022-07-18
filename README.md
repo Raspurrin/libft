@@ -11,13 +11,18 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 
 ## Header
 
+## Malloc
+
+## Pointers, char * vs char[]
+
 ## Memory functions 
 
 ## Function pointers
 
 ## File descriptor
 
-## str[i] vs *str++
+## Str[i] vs *str++
 
-## allocating a double pointer
+## Allocating a double pointer
 
+## Typecasting 
