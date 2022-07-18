@@ -1,10 +1,12 @@
 # Libft 
 
 ### Index:
++ [The library](#the-library)
 + [Function comments](#function-comments)
 + [Mandatory function from the subject + bonus:](#mandatory-function-from-the-subject--bonus)
 + [Custom functions:](#custom-functions) 
 
+## The library
 I made my own library in which I recreated functions from the standard C library. This is because we have to make everything from scratch in the school I attend. So in further projects we are allowed to reuse this and potentially other projects, like ft_printf and get_next_line. 
 
 In this project we learn about many concepts: creating a static library, using a makefile and a header, data type conversion, dynamic memory allocation, pointers vs arrays, memory functions, function pointers, file descriptors, 2D array or an array of strings, typecasting, guards, structs and linked lists.
@@ -35,4 +37,16 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 |  strlen | | |  | | |
 
 ## Custom functions: 
-Free_2d_guard, free_2d, abs, atoll, intlen, isspace, pow, realloc, strlen_ignore, wcount, getncount, print_2d_fd, I also include my get_next_line and printf in my library now. 
++ **Free_2d_guard** - frees a 2D array and protects against double freeing. 
++ **Free_2d** - frees a 2D array. 
++ **abs** - converts a number to a positive if it's a negative number. 
++ **atoll** - converts a string to an integer, but in a long long format
++ **intlen** - counts the length of an integer
++ **isspace** - Checks whether the character is a white-space character (' ', '\n', '\t', '\v', '\f', '\r')
++ **pow** - calculates the power of a number. 
++ **realloc** - dynamically allocates something that was allocated previously, with a different size. 
++ **strlen_ignore** - Counts the length of a string, ignoring a specified character.
++ **wcount** - counts parts in a string, seperated by a specified delimiter. 
++ **getncount** - Counts the occurances of a specified char in a string. 
++ **print_2d_fd** - prints a 2D string on a specified file descriptor. 
++ I also include my get_next_line and printf in my library now. 
