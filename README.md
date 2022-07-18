@@ -28,3 +28,5 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 ## Typecasting 
 
 ## Guards
+
+## Structs and Linked lists
