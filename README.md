@@ -19,20 +19,19 @@ If you use a doxygen extension in Vscode you can also see these descriptions whe
 <img src="https://user-images.githubusercontent.com/13866954/179558332-e459556f-263e-4af2-8714-00739c7a3739.png" height="120"/> <img src="https://user-images.githubusercontent.com/13866954/179558352-512cbaf7-ac23-423e-9999-29131349ae67.png" height="120"/>
 
 ## Mandatory function from the subject + bonus:
-| String | Ascii check | Memory | Linked list | Data type | Function pointer| 
-| --- | --- | --- | --- | --- | --- | 
-| strchr | isalpha  | memchr |  lstnew | putchar_fd  | strmapi| 
-| strrchr | isdigit  | memcmp  |  lstadd_front | putstr_fd | striteri| 
-| strncmp | isalnum  |  memset |  lstsize | putendl_fd | |
-| strdup | isascii  | bzero | lstadd_back | putnbr_fd | |
-| strlcpy | isprint  | memcpy  | lstlast | itoa | |
-| substr | toupper | memmove |  strlcat | atoi |
+| String | Ascii check | Memory | Linked list | Write fd| Conversion |Function pointer| 
+| --- | --- | --- | --- | --- | --- | -- |
+| strchr | isalpha  | memchr |  lstnew | putchar_fd  | putnbr_fd | strmapi| 
+| strrchr | isdigit  | memcmp  |  lstadd_front | putstr_fd | itoa | striteri| 
+| strncmp | isalnum  |  memset |  lstsize | putendl_fd | atoi |
+| strdup | isascii  | bzero | lstadd_back | | |
+| strlcpy | isprint  | memcpy  | lstlast | | |
+| substr | toupper | memmove |  strlcat | |
 | strjoin |  tolower | calloc |  | | |
 |  strtrim | | |  | | |
 |  strnstr | | |  | | |
 |  strlen | | |  | | |
 |  split | | |  | | |
-|  strlen | | |  | | |
 
 ## Custom functions: 
 + **Free_2d_guard** - frees a 2D array and protects against double freeing. 
