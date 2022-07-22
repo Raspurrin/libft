@@ -9,7 +9,7 @@
 ## The library
 I made my own library in which I recreated functions from the standard C library. For my school, we have to make everything from scratch, so we can learn from a low level, from the ground up. In further projects we are allowed to reuse this and we can keep adding our own custom functions to it, as well as other projects. 
 
-In this project we learn about many concepts: creating a static library, using a makefile and a header, data type conversion, modulo, recursion, dynamic memory allocation, stack vs heap, char pointers vs char arrays, memory functions, function pointers, file descriptors, 2D array or an array of strings, typecasting, guards, structs and linked lists.
+In this project we learn about many concepts: creating a static library, using a makefile and a header, data type conversion, modulo, recursion, dynamic memory allocation, stack vs heap, char pointers vs char arrays, void pointers, memory functions, function pointers, file descriptors, 2D array or an array of strings, typecasting, guards, structs and linked lists.
 
 ## Doxygen comments
 
