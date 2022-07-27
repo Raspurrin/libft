@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_2d.c                                          :+:      :+:    :+:   */
+/*   display_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:54:06 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/22 05:48:56 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/17 21:35:10 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/17 21:36:29 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	free_2d(char **arr)
+void	display_error(char *error_msg, bool yeet)
 {
-	size_t	i;
-
-	i = 0;
-	if (arr)
-	{
-		while (arr[i])
-			free(arr[i++]);
-		free(arr);
-	}
+	perror(error_msg);
+	if (yeet == true)
+		exit(EXIT_FAILURE);
 }

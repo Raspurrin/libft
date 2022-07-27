@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_2d.c                                          :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 15:54:06 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/22 05:48:56 by mialbert         ###   ########.fr       */
+/*   Created: 2022/07/18 12:36:41 by mialbert          #+#    #+#             */
+/*   Updated: 2022/07/25 23:57:35 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	free_2d(char **arr)
+void	ft_lstprint_fd(void *head, char type, int32_t fd)
 {
-	size_t	i;
-
-	i = 0;
-	if (arr)
+	if (!head || !type || !fd)
+		return ;
+	while (head != NULL)
 	{
-		while (arr[i])
-			free(arr[i++]);
-		free(arr);
+		if (type == 'd')
+			ft_printf_fd(fd, "%d", ((t_list *)head)->content);
+		else if (type == 's')
+			ft_printf_fd(fd, "%s", ((t_list *)head)->content);
+		head = ((t_list *)head)->next;
 	}
 }
