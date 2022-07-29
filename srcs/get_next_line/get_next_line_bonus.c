@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 21:42:31 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
+/*   Updated: 2021/12/29 01:16:51 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "get_next_line.h"
+// #include "get_next_line_utils.c"
+// #include <stdio.h>
 
 /**
  * example .txt file in my further comments:
@@ -37,7 +39,7 @@ int	gnl_strlen(const char *str)
  */
 static char	*ft_trim(char *line, char *remainder)
 {
-	ssize_t		remdrlen;
+	ssize_t		buflen;
 	size_t		linelen;
 
 	linelen = 0;
@@ -45,43 +47,44 @@ static char	*ft_trim(char *line, char *remainder)
 		linelen++;
 	if (line[linelen] == '\n')
 		linelen++;
-	remdrlen = (gnl_strlen(line) - linelen);
-	if (remdrlen != 0)
-		gnl_strlcpy(remainder, line + linelen, remdrlen + 1);
+	buflen = (gnl_strlen(line) - linelen);
+	if (buflen != 0)
+		gnl_strlcpy(remainder, line + linelen, buflen + 1);
 	else
 		remainder[0] = '\0';
-	return (gnl_substr(line, 0, linelen + 1));
+	line = gnl_substr(line, 0, linelen + 1);
+	return (line);
 }
 
 /**
  * @brief Reads BUFFER_SIZE amount of chars every loop until finding a '\\n'
  * and appends this from buf to line each time.
- * example BUFFER_SIZE = 11: 
+ * ex BUFFER_SIZE = 11: 
  * loop 1: Buf = "Something i". Line = "Something i"
  * loop 2: Buf = "s here\\nAnd" Line = "Something is here\\nAnd"
  */
-static char	*read_line(char *line, char *buf, int fd)
+static char	*read_line(char	*line, char *buf, int fd)
 {
 	ssize_t		buflen;
 
-	buflen = BUFFER_SIZE;
-	while (!(gnl_strchr(buf, '\n')) && buflen == BUFFER_SIZE)
+	while (!(gnl_strchr(buf, '\n')))
 	{
 		buflen = read(fd, buf, BUFFER_SIZE);
-		buf[buflen] = '\0';
 		if (buflen <= 0 && !line[0])
 		{
 			free (line);
 			return (NULL);
 		}
+		buf[buflen] = '\0';
 		line = gnl_strjoin(line, buf);
+		if (buflen < BUFFER_SIZE && !(gnl_strchr(buf, '\n')))
+			return (line);
 	}
 	return (line);
 }
 
 /**
  * @brief Get the next line of a file every time the function is called.
- * Appends the remainder from the previous function call to line if present.
  * line 	 - will hold the line to be returned (including '\\n' if available)
  * buf 		 - temporary storage for BUFFER_SIZE amount of chars 
  * remainder - Holds the remainder of the line after '\\n' 
@@ -90,38 +93,38 @@ static char	*read_line(char *line, char *buf, int fd)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	buf[BUFFER_SIZE + 1];
+	static char	*buf[1024];
 
 	line = malloc(1);
 	if (!line)
 		return (NULL);
 	line[0] = '\0';
-	if (buf[0] != '\0')
-		line = gnl_strjoin(line, buf);
-	line = read_line(line, buf, fd);
+	if (!buf[fd])
+		line = gnl_strjoin(line, buf[fd]);
+	line = read_line(line, buf[fd], fd);
 	if (!line)
 		return (NULL);
-	line = ft_trim(line, buf);
+	line = ft_trim(line, buf[fd]);
 	return (line);
 }
 
-// #include <stdio.h>
-
 // int	main(void)
 // {
-// 	int		fd;
+// 	int		fd[3];
+// 	size_t	i;
 // 	char	*line;
 
-// 	fd = open("test.txt", O_RDONLY);
-// 	if (!fd)
-// 		return (0);
-// 	while (1)
+// 	fd[0] = open("41_no_nl", 0);
+// 	fd[1] = open("multiple_nlx5", 0);
+// 	fd[2] = open("test.txt", 0);
+// 	while (i < 4)
 // 	{
-// 		line = get_next_line(fd);
+// 		line = get_next_line(fd[i]);
 // 		printf("%s", line);
 // 		if (!line)
-// 			break ;
+// 			i++;
 // 	}
+// 	free(line);
 // 	close(fd);
 // 	return (0);
 // }
