@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/17 21:12:39 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/07/29 01:57:09 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 # elif defined(__APPLE__)
 #  define NULL_OUTPUT "0x0" 
 # endif
+
+typedef enum elem
+{
+	CONTENT,
+	INDEX,
+}	t_elem;
 
 /**
  * @param content : The data contained in the element. 
@@ -199,7 +205,7 @@ int32_t		ft_strncmp(const char *str1, const char *str2, size_t n);
  * Checks a memory area instead of just a string 
  * and checks after null terminators.
  * @param ptr Memory area in which the character will be searched.
- * @param value Value to be located.
+ * @param content content to be located.
  * @param n Number of bytes to be analyzed.
  * @return A pointer to the first occurance of c in str 
  * or NULL if t he character does not occur.
@@ -232,14 +238,14 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
 /**
  * Converts a string to integers.
  * @param str The string to be converted.
- * @return The converted value or 0 on error.
+ * @return The converted content or 0 on error.
  */
 int32_t		ft_atoi(const char *str);
 
 /**
  * Converts a string to integers in 64 bit format.
  * @param str The string to be converted.
- * @return The converted value in 64 bits or 0 on error.
+ * @return The converted content in 64 bits or 0 on error.
  */
 int64_t		ft_atoll(const char *str);
 
@@ -438,16 +444,16 @@ size_t		ft_pow(int64_t base, int32_t power);
 void		*ft_realloc(void *ptr, size_t size);
 
 /**
- * Returns absolute value of x
+ * Returns absolute content of x
  * @param x
- * @return absolute value of x
+ * @return absolute content of x
  */
 int32_t		ft_abs(int32_t x);
 
 // Bonus content:
 /**
  * Allocates (with malloc(3)) and returns a new element. 
- * The variable `content` is initialized with the value 
+ * The variable `content` is initialized with the content 
  * of the parameter `content`. The variable `next` is initialized to NULL.
  * @param content The content to create the new element with.
  * @return The new element.
@@ -456,7 +462,7 @@ t_list		*ft_lstnew(void *content);
 
 /**
  * Adds the element `new` at the beginning of the list.
- * @param lst The address of a pointer to the first link of a list.
+ * @param lst The address of the first node in the list. 
  * @param new The address of a pointer to the element to be added to the list.
  * @return None
  */
@@ -468,6 +474,13 @@ void		ft_lstadd_front(t_list **lst, t_list *new);
  * @return Length of the list.
  */
 int			ft_lstsize(t_list *lst);
+
+/**
+ * Counts the number of elements in a list.
+ * @param lst The beginning of the list, this can be any list!
+ * @return Length of the list.
+ */
+size_t		lstsize(void *lst);
 
 /**
  * Returns the last element of the list.
@@ -530,6 +543,13 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), \
 			void (*del)(void *));
 
 /**
+ * Iterates through a linked list and prints the content of every node.
+ * @param head Pointer to the head of the linked list.
+ * @param type Which type has to be printed, 'd' for int or 's' for char *.
+ */
+void		ft_lstprint_fd(void *head, char type, int32_t fd);
+
+/**
  * Prints a 2d array.
  * @param arr 2D array to be printed.
  */
@@ -541,7 +561,7 @@ void		print_2d_fd(char **arr, int32_t fd);
  * won't be true.
  * @param arr Pass the address of your 2D array here. It's a 3D array, 
  * so it can change the address the 2D array is pointing to and retain 
- * that value outside of the scope of this function.
+ * that content outside of the scope of this function.
  */
 void		free_2d_guard(char ***arr);
 

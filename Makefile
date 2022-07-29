@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/17 21:12:26 by mialbert         ###   ########.fr        #
+#    Updated: 2022/07/28 19:52:17 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,17 +65,19 @@ SRCS = 			./srcs/ft_memmove.c \
 				./srcs/ft_putmem_fd.c \
 				./srcs/ft_printf.c \
 				./srcs/getncount.c \
-				./srcs/ft_strlen_ignore.c
+				./srcs/ft_strlen_ignore.c 
 
 BONUS_SRCS = 	./bonus/ft_lstadd_back.c \
 				./bonus/ft_lstdelone.c \
 				./bonus/ft_lstclear.c \
 				./bonus/ft_lstnew.c \
 				./bonus/ft_lstsize.c \
+				./bonus/lstsize.c \
 				./bonus/ft_lstadd_front.c \
 				./bonus/ft_lstmap.c \
 				./bonus/ft_lstlast.c \
-				./bonus/ft_lstiter.c
+				./bonus/ft_lstiter.c \
+				./bonus/ft_lstprint.c
 
 B_RED	:= \033[1;31m
 RED 	:= \033[0;31m
@@ -94,17 +96,16 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "Done"
 
 bonus : $(BONUS_OBJS) $(OBJS)
 	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(notdir $(OBJS))
+	@echo "$(B_RED)🧹 Cleaning: $(RED) libft object files $(NC)"
 	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	@echo "$(B_RED)🧹 Cleaning: $(RED)" $(NAME)
+	@echo "$(B_RED)🧹 Cleaning: $(RED) $(NAME) $(NC)"
 	@rm -f $(NAME)
 
 re: fclean all
