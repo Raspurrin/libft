@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/29 01:57:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/08/03 01:45:47 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -449,6 +449,14 @@ void		*ft_realloc(void *ptr, size_t size);
  * @return absolute content of x
  */
 int32_t		ft_abs(int32_t x);
+
+/**
+ * @brief 
+ * 
+ * @param lst_size 
+ * @return size_t 
+ */
+size_t		binary_count(size_t lst_size);
 
 // Bonus content:
 /**

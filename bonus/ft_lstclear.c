@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:11:43 by mialbert          #+#    #+#             */
-/*   Updated: 2021/12/02 23:50:07 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/08/03 03:29:41 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		return ;
 	while (tmp != NULL)
 	{
-		ft_lstdelone(tmp, del);
-		tmp = tmp->next;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
 	tmp = NULL;
 }
