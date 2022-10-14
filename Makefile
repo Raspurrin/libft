@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/07/29 18:40:08 by mialbert         ###   ########.fr        #
+#    Updated: 2022/10/14 04:56:45 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,9 @@ SRCS = 			./srcs/ft_memmove.c \
 				./srcs/ft_putmem_fd.c \
 				./srcs/ft_printf.c \
 				./srcs/getncount.c \
-				./srcs/ft_strlen_ignore.c 
+				./srcs/ft_strlen_ignore.c \
+				./srcs/get_next_line/get_next_line.c \
+				./srcs/get_next_line/get_next_line_utils.c
 
 BONUS_SRCS = 	./bonus/ft_lstadd_back.c \
 				./bonus/ft_lstdelone.c \
@@ -89,6 +91,8 @@ PURPLE		:= \033[0;35m
 B_PURPLE	:= \033[1;35m
 
 OBJS = $(SRCS:.c=.o)
+GNL_OBJS = 		./srcs/get_next_line/get_next_line.o \
+				./srcs/get_next_line/get_next_line_utils.o
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: gnl $(NAME)
@@ -101,7 +105,7 @@ gnl:
 	@$(MAKE) -C $(GNL)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS) $(GNL_OBJS)
 
 bonus : $(BONUS_OBJS) $(OBJS)
 	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
@@ -109,7 +113,7 @@ bonus : $(BONUS_OBJS) $(OBJS)
 clean:
 	@echo "$(B_RED)🧹 Cleaning: $(RED) libft object files $(NC)"
 	@rm -f $(OBJS) $(BONUS_OBJS)
-	@$(MAKE) -C $(GNL) clean
+	@$(MAKE) -C $(GNL) fclean
 
 fclean: clean
 	@echo "$(B_RED)🧹 Cleaning: $(RED) $(NAME) $(NC)"

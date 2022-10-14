@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 21:37:57 by mialbert          #+#    #+#              #
-#    Updated: 2022/07/18 05:01:37 by mialbert         ###   ########.fr        #
+#    Updated: 2022/10/14 04:53:08 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all : $(OBJS)
 %.o : %.c
 	@echo "${PURPLE}======== GNL ========${NC}"
 	@echo "$(B_BLUE)Compiling: $(BLUE)$(notdir $<) 🔨$(NC)"
-	@$(CC) $(CFLAGS) -c $(SRCS) 
+	@$(CC) $(CFLAGS) -c $(SRCS) -o $(OBJS)
 
 $(OBJS) : 
 	@$(CC) -std=c11 $(CFLAGS) -ggdb3 -c $(SRCS) 
@@ -43,10 +43,14 @@ valgrind: test
 	@echo ""
 	@valgrind --leak-check=full ./a.out
 
-clean: 
+clean:
 	@echo "${B_RED}🧹 Cleaning: ${RED} $(notdir $(OBJS))"
 	@rm -f $(OBJS)
 
-re : clean all 
+fclean: clean
+	@echo "${B_RED}🧹 Cleaning: ${RED} $(notdir $(NAME))"
+	@rm -rf $(NAME)
+
+re : clean all
 
 .PHONY: clean fclean re test valgrind all bonus unittest
