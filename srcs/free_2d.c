@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:54:06 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/22 05:48:56 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/10 01:33:48 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ void	free_2d(char **arr)
 	i = 0;
 	if (arr)
 	{
-		while (arr[i])
-			free(arr[i++]);
+		while (arr[i]) // i < length of array
+		{
+			free(arr[i]);
+			arr[i++] = NULL;
+		}
 		free(arr);
+		arr = NULL;
 	}
 }

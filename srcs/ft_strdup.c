@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 21:19:02 by mialbert          #+#    #+#             */
-/*   Updated: 2022/07/15 19:53:27 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:48:49 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *str)
 	char	*out;
 
 	len = ft_strlen((char *)str) + 1;
-	out = malloc(len * sizeof(char));
+	out = ft_calloc(len + 1, sizeof(char));
 	if (!out)
 		return (NULL);
 	ft_memcpy(out, str, len);
