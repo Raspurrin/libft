@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/08/03 01:45:47 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/13 05:35:03 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -457,6 +457,18 @@ int32_t		ft_abs(int32_t x);
  * @return size_t 
  */
 size_t		binary_count(size_t lst_size);
+
+/**
+ * Finds the last occurance of char in the string 
+ * and returns that position.
+ */
+size_t	pos_char_end(char *str, char n);
+
+/**
+ * Finds the first occurance of char in the string 
+ * and returns that position.
+ */
+size_t	pos_char_start(char *str, char n);
 
 // Bonus content:
 /**
