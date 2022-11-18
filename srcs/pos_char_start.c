@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 05:32:38 by mialbert          #+#    #+#             */
-/*   Updated: 2022/11/13 05:33:04 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:57:22 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ size_t	pos_char_start(char *str, char n)
 {
 	size_t	len;
 
-	len = ft_strlen(str);
-	while (str[len] != n)
-		len--;
+	len = 0;
+	while (str[len] != n && str[len])
+		len++;
 	return (len);
 }

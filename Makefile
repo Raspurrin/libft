@@ -6,12 +6,12 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:53:09 by jkaczmar          #+#    #+#              #
-#    Updated: 2022/11/13 05:34:17 by mialbert         ###   ########.fr        #
+#    Updated: 2022/11/17 17:52:30 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 CC = gcc
 GNL	= ./srcs/get_next_line/
 SRCS = 			./srcs/ft_memmove.c \
