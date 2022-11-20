@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/11/13 05:35:03 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/20 02:45:49 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -437,11 +437,21 @@ size_t		ft_pow(int64_t base, int32_t power);
 
 /**
  * Resizes memory that has been allocated through malloc or calloc.
- * @param ptr
- * @param size
- * @return 
+ * @param ptr The old pointer to be reallocated.
+ * @param size The size of the new allocation.
+ * @return A segfault.
  */
 void		*ft_realloc(void *ptr, size_t size);
+
+/**
+ * Resizes memory that has been allocated through malloc or calloc.
+ * But less retarded.
+ * @param ptr The old pointer to be reallocated.
+ * @param size The size of the new allocation.
+ * @param ptr_len The size of the old allocation to prevent segfaults.
+ * @return A malloced string of size size with the value of old ptr.
+ */
+void		*ft_realloc_n(void *ptr, size_t size, size_t ptr_len);
 
 /**
  * Returns absolute content of x
