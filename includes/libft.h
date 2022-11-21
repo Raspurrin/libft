@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/11/20 02:45:49 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:43:04 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,6 +191,16 @@ char		*ft_strchr(const char *str, int32_t c);
 char		*ft_strrchr(const char *str, int32_t c);
 
 /**
+ * Compares str1 and str2 and checks whether the length of the strings
+ * are the same.
+ * @param str1 First string to be compared.
+ * @param str2 Second string to be compared.
+ * @return < 0 if str1 is less than str2, > 0 if str2 is less than str1, 
+ * 0 if they are equal and -1 if the lengths are not the same.
+ */
+int32_t		ft_strcmp(const char *str1, const char *str2);
+
+/**
  * Compares str1 and str2 up to n bytes.
  * @param str1 First string to be compared.
  * @param str2 Second string to be compared.
@@ -285,6 +295,14 @@ char		*ft_substr(char const *str, uint32_t start, size_t len);
  * @return The new string. NULL if the allocation fails.
  */
 char		*ft_strjoin(char const *str1, char const *str2);
+
+/**
+ * 
+ * @param str1 
+ * @param str2 
+ * @return char* 
+ */
+char		*ft_strjoin_free(char *str1, char *str2);
 
 /**
  * Allocates (with malloc(3)) and returns a copy of `s1` 
