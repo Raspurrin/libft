@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:15:10 by mialbert          #+#    #+#             */
-/*   Updated: 2022/11/21 11:43:04 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/21 19:15:39 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -297,10 +297,22 @@ char		*ft_substr(char const *str, uint32_t start, size_t len);
 char		*ft_strjoin(char const *str1, char const *str2);
 
 /**
- * 
- * @param str1 
- * @param str2 
- * @return char* 
+ * Allocates (with malloc(3)) and returns a new string, 
+ * which is the result of the concatenation of `s1` and `s2`.
+ * But frees str2!
+ * @param str1 The prefix string.
+ * @param str2 The suffix string.
+ * @return The new string. NULL if the allocation fails.
+ */
+char		*ft_strjoin_str2(char *str1, char *str2);
+
+/**
+ * Allocates (with malloc(3)) and returns a new string, 
+ * which is the result of the concatenation of `s1` and `s2`.
+ * But frees both strings!
+ * @param str1 The prefix string.
+ * @param str2 The suffix string.
+ * @return The new string. NULL if the allocation fails.
  */
 char		*ft_strjoin_free(char *str1, char *str2);
 
