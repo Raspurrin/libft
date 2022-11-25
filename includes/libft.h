@@ -626,6 +626,13 @@ void		print_2d_fd(char **arr, int32_t fd);
 void		free_2d_guard(char ***arr);
 
 /**
+ * @param msg Your message to be printed on STDERR, automatically followed
+ * by the line number and file name the error occured at
+ * @param exit_nbr If -1
+ */
+void		error_line(char *msg, int32_t exit_nbr);
+
+/**
  * Frees a 2D array.
  * @param arr The 2D array to be freed
  */
