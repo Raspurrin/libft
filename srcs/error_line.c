@@ -12,7 +12,7 @@
 
 #include "../includes/libft.h"
 
-void	error_line(char *msg, char *line, char *file, int32_t exit_nbr)
+void	error_line(char *msg, int32_t line, char *file, int32_t exit_nbr)
 {
 	ft_printf_fd(STDERR_FILENO, "%s @ %s %s", msg, line, file);
 	if (exit_nbr >= 0)

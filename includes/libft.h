@@ -630,7 +630,7 @@ void		free_2d_guard(char ***arr);
  * by the line number and file name the error occured at
  * @param exit_nbr If -1
  */
-void		error_line(char *msg, int32_t exit_nbr);
+void		error_line(char *msg, int32_t line, char *file, int32_t exit_nbr);
 
 /**
  * Frees a 2D array.
