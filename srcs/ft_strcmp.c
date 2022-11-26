@@ -17,7 +17,6 @@ int32_t	ft_strcmp(const char *str1, const char *str2)
 	size_t	i;
 
 	i = 0;
-
 	if (ft_strlen(str1) != ft_strlen(str2))
 		return (-1);
 	while ((uint8_t)str1[i] && (uint8_t)str2[i] && \

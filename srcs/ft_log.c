@@ -20,4 +20,3 @@ float	ft_log(int32_t base, int32_t nbr)
 	while (ft_pow(base, i) < nbr)
 		i++;
 }
-

@@ -97,7 +97,7 @@ size_t		ft_strlen(const char *str);
  * @param ignore The character not to be counted. 
  * @return The length of the string.
  */
-int	ft_strlen_ignore(const char *str, char ignore);
+int			ft_strlen_ignore(const char *str, char ignore);
 
 /** 
  * Fills src up to n with c.
@@ -502,13 +502,13 @@ size_t		binary_count(size_t lst_size);
  * Finds the last occurance of char in the string 
  * and returns that position.
  */
-size_t	pos_char_end(char *str, char n);
+size_t		pos_char_end(char *str, char n);
 
 /**
  * Finds the first occurance of char in the string 
  * and returns that position.
  */
-size_t	pos_char_start(char *str, char n);
+size_t		pos_char_start(char *str, char n);
 
 // Bonus content:
 /**
