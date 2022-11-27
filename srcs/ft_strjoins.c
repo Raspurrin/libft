@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:28:46 by mialbert          #+#    #+#             */
-/*   Updated: 2022/11/21 11:57:43 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/11/27 15:44:11 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 char	*ft_strjoins(char *join(), ...)
 {
 	size_t	len;
-	size_t	old_len;
 	char	*out;
 	char	*str;
 	va_list	argp;
@@ -28,7 +27,6 @@ char	*ft_strjoins(char *join(), ...)
 	out = ft_strdup("");
 	while (str)
 	{
-		old_len = len;
 		out = join(out, str);
 		str = va_arg(argp, char *);
 		if (str)
