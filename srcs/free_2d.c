@@ -19,9 +19,10 @@ void	free_2d(char **arr)
 	i = 0;
 	if (arr)
 	{
-		while (arr[i])
+		while (arr && arr[i])
 		{
-			free(arr[i]);
+			if (arr[i] != NULL)
+				free(arr[i]);
 			arr[i++] = NULL;
 		}
 		free(arr);

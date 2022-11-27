@@ -19,7 +19,7 @@ void	free_2d_guard(char ***arr)
 	i = 0;
 	if (*arr)
 	{
-		while ((*arr)[i])
+		while (*(arr) && (*arr)[i])
 		{
 			free((*arr)[i]);
 			(*arr)[i++] = NULL;
