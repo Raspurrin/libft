@@ -85,6 +85,14 @@ bool		ft_isascii(int32_t c);
 bool		ft_isprint(int32_t c);
 
 /** 
+ * Checks the length of str up until c.
+ * @param str A string.
+ * @param c the character until which to count.
+ * @return The length of the string until c.
+ */
+size_t		ft_strclen(char *str, char c);
+
+/** 
  * Checks the length of str.
  * @param str A string.
  * @return The length of the string.
