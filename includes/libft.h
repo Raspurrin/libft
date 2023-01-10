@@ -297,6 +297,16 @@ char		*ft_substr(char const *str, uint32_t start, size_t len);
 char		*ft_strjoin(char const *str1, char const *str2);
 
 /**
+ * Joins as many strings together as given with the given strjoin
+ * function, done with variadic arguments. The last string has to be NULL,
+ * to prevent a segfault.
+ * @param join() The strjoin function you want to use.
+ * @param ... However many strings you want to join together
+ * @return The new string. NULL if the allocation fails.
+ */
+char		*ft_strjoins(char *join(), ...);
+
+/**
  * Allocates (with malloc(3)) and returns a new string, 
  * which is the result of the concatenation of `s1` and `s2`.
  * But frees str2!
