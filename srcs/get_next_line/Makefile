@@ -48,7 +48,6 @@ clean:
 	@rm -f $(OBJS)
 
 fclean: clean
-	@echo "${B_RED}🧹 Cleaning: ${RED} $(notdir $(NAME))"
 	@rm -rf $(NAME)
 
 re : clean all
