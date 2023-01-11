@@ -163,7 +163,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size);
  * @param c the character, you idiot.
  * @return the length of src up to c.
  */
-size_t	ft_strccpy(char *dst, const char *src, char c);
+size_t		ft_strccpy(char *dst, const char *src, char c);
 
 /**
  * Appends the NUL-terminated string src to the end of dst. 
