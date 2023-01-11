@@ -136,7 +136,7 @@ void		*ft_memcpy(void *dst, const void *src, size_t n);
 
 /**
  * Copies n bytes from memory area src to memory area dest. 
- * Memory areas may overlap
+ * Memory areas may overlap.
  * @param dst Appointed memory to be filled.
  * @param src Memory area to be copied from.
  * @param n The amount of bytes copied from src to dest.
@@ -147,7 +147,7 @@ void		*ft_memmove(void *dst, const void *src, size_t n);
 /**
  * Copies up to size - 1 characters from the NUL-terminated 
  * string src to dst, NUL-terminating the result. as long as size 
- * is larger than 0. A byte for NUL 
+ * is larger than 0. A byte for NULL.
  * should be included in size. Src must be NUL-terminated.
  * @param dest Where src is to be copied to.
  * @param src The string to be copied to dest.
@@ -156,6 +156,15 @@ void		*ft_memmove(void *dst, const void *src, size_t n);
  * the initial length of dst plus the length of src.
  */
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
+
+/**
+ * @brief Copies from src to a malloced string up until c
+ * has been reached.
+ * @param src the SAUS.
+ * @param c the character, you idiot.
+ * @return a malloced string with the values from src up to c.
+ */
+size_t		ft_strccpy(const char *src, char c);
 
 /**
  * Appends the NUL-terminated string src to the end of dst. 
