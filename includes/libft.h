@@ -158,11 +158,10 @@ void		*ft_memmove(void *dst, const void *src, size_t n);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 
 /**
- * @brief Copies from src to a malloced string up until c
- * has been reached.
+ * @brief Copies from src to dst until c has been reached.
  * @param src the SAUS.
  * @param c the character, you idiot.
- * @return a malloced string with the values from src up to c.
+ * @return the length of src up to c.
  */
 size_t		ft_strccpy(const char *src, char c);
 
